@@ -2,11 +2,11 @@
 
 ## Background
 
-Budgit is a mobile/ desktop web application that allows you to simplfy the way you manage your expense and help you maximize your budget! 
+Budgit is a mobile/ desktop web application that allows you to simplfy the way you manage your expenses and help you maximize your budget! Not sure when you'll finally be able to afford that trip or that sweet new ride? Budgit will help you figure that out in no time! 
 
 ## Features
 
-Budgit allows you to -
+##### Budgit allows you to
 1. Track all expenses
 2. Visualize spending categories
 3. Track monthly subscriptions
@@ -17,5 +17,5 @@ Budgit allows you to -
 
 ## Technologies
 
-- d3.js API
+- D3.js API
 - Chart.js API
