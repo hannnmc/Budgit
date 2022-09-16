@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="./dist/main.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="./dist/main.js"></script>
     
     <title>Budgit</title>
@@ -15,35 +16,83 @@
   <body>
 
 
-    <div class="container">
-      <div class="sidenav"> 
 
-        <div class="sidenav-links">
-          <a href=#><i class="material-symbols-outlined">menu</i></a>
-          <br>
-          <a href=#><i class="material-symbols-outlined">home</i></a>
-          <a href=#><i class="material-symbols-outlined">pie_chart</i></a>
-          <a href=#><i class="material-symbols-outlined">bar_chart</i></a>
-          <a href=#><i class="material-symbols-outlined">calculate</i></a>
-          <a href=#><i class="material-symbols-outlined">tips_and_updates</i></a>
-        </div>
-        
+    <div class="sidenav"> 
 
-        <div class="sidenav-bot">
-          <div>
-            <img id="profile-photo" src="./assets/images/default_profile_photo.jpeg">
-          </div> 
-          <br>
-          <div>
-            Logout
-          </div>
-        </div>
-
+      <div class="sidenav-links">
+        <a href=#><i class="material-symbols-outlined">menu</i></a>
+        <br>
+        <a href=#><i class="material-symbols-outlined">home</i></a>
+        <a href=#><i class="material-symbols-outlined">pie_chart</i></a>
+        <a href=#><i class="material-symbols-outlined">bar_chart</i></a>
+        <a href=#><i class="material-symbols-outlined">calculate</i></a>
+        <a href=#><i class="material-symbols-outlined">tips_and_updates</i></a>
       </div>
-      <div class="main">
-        Welcome to Budgit
+      
+
+      <div class="sidenav-bot">
+        <div>
+          <img id="profile-photo" src="./assets/images/default_profile_photo.jpeg">
+        </div> 
+        <br>
+        <div>
+          Logout
+        </div>
       </div>
+
     </div>
+    <div class="main">
+      Welcome to Budgit
+      Daily Spending
+      <div>
+        <canvas id="myChart">
+          <script>
+            const labels = [
+              'January',
+              'February',
+              'March',
+              'April',
+              'May',
+              'June',
+            ];
+          
+            const data = {
+              labels: labels,
+              datasets: [{
+                label: 'Monthly Spending',
+                backgroundColor: 'rgb(255, 99, 132)',
+                borderColor: 'rgb(255, 99, 132)',
+                data: [0, 10, 5, 2, 20, 30, 45],
+              }]
+            };
+          
+            const config = {
+              type: 'line',
+              data: data,
+              options: {}
+            };
+          </script>
+          <script>
+            const myChart = new Chart(
+              document.getElementById('myChart'),
+              config
+            );
+          </script>
+        </canvas>
+        
+      </div>
+      <div>
+        Monthly Spending History
+      </div>
+      <div>
+        Spending Categories
+      </div>
+      <div>
+        Enter New Expense
+      </div>
+
+    </div>
+
 
       
     

@@ -76,9 +76,9 @@ body {
   .sidenav a{
     display: flex;
     flex-direction: column;
-    padding: 0px 0px 25px 0px;
+    padding: 0px 0px 12.5px 0px;
     text-decoration: none;
-    font-size: 35px;
+    font-size: 45px;
     color: #818181;
     display: block;
   }
@@ -86,8 +86,6 @@ body {
   .sidenav-bot {
     display:flex;
     flex-direction: column;
-    /* position:absolute;
-    bottom: 100px; */
     flex-grow: .165;
   }
   
@@ -98,6 +96,11 @@ body {
   
   .main {
     margin-left: 90px;
+  }
+  
+  #myChart {
+    width: 10px;
+    height: 100px;
   }
 /*!*************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
