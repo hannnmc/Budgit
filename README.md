@@ -26,6 +26,7 @@ Budgit allows you to record expenses and income, set a date for entry, categorie
 
 - D3.js - Visualizing data
 - Chart.js - Visualizing data
+- Local Storage - Storing user data
 
 ## Implementation Timeline
 
