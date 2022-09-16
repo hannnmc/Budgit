@@ -2,6 +2,7 @@
 <div align="center">
   <img width="550" height="406" src="https://github.com/hannnmc/Budgit/blob/main/assets/images/layout_draft.png">
 </div>
+
 ## Background
 
 Budgit is a mobile/ desktop web application that allows you to simplfy the way you manage your expenses and help you maximize your budget! Not sure when you'll finally be able to afford that trip or that sweet new ride? Budgit will help you realize it sooner than you think!
