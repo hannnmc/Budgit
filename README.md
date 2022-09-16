@@ -1,6 +1,6 @@
 # Budgit
 <div align="center">
-  <img width="550" height="300" src="https://github.com/hannnmc/budgit/blob/main/assets/images/logo.png">
+  <img width="550" height="300" src="https://github.com/hannnmc/Budgit/blob/main/assets/images/layout_draft.png">
 </div>
 ## Background
 
