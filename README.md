@@ -24,5 +24,14 @@ Budgit allows you to record expenses and income, set a date for entry, categorie
 
 ## Technologies
 
-- D3.js API
-- Chart.js API
+- D3.js - Visualizing data
+- Chart.js - Visualizing data
+
+## Implementation Timeline
+
+- Friday Afternoon & Weekend - build index html page and familiarize with API
+- Monday - Finalize HTML, CSS, and UX UI
+- Tuesday - Work on js components utilizing DOM manipulation and AJAX to render events
+- Wednesday - Implement additional functionalities and formulas
+- Thursday Morning - Finish all functionalities and testing
+
