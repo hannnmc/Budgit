@@ -15,51 +15,67 @@
 
   <body>
 
+    <div id="container">
 
+      <div class="sidenav"> 
 
-    <div class="sidenav"> 
-
-      <div class="sidenav-links">
-        <a href=#><i class="material-symbols-outlined">menu</i></a>
-        <br>
-        <a href=#><i class="material-symbols-outlined">home</i></a>
-        <a href=#><i class="material-symbols-outlined">pie_chart</i></a>
-        <a href=#><i class="material-symbols-outlined">bar_chart</i></a>
-        <a href=#><i class="material-symbols-outlined">calculate</i></a>
-        <a href=#><i class="material-symbols-outlined">tips_and_updates</i></a>
-      </div>
-      
-
-      <div class="sidenav-bot">
-        <div>
-          <img id="profile-photo" src="./assets/images/default_profile_photo.jpeg">
-        </div> 
-        <br>
-        <div>
-          Logout
+        <div class="sidenav-links">
+          <a href=#><i class="material-symbols-outlined">menu</i></a>
+          <br>
+          <a href=#><i class="material-symbols-outlined">home</i></a>
+          <a href=#><i class="material-symbols-outlined">pie_chart</i></a>
+          <a href=#><i class="material-symbols-outlined">bar_chart</i></a>
+          <a href=#><i class="material-symbols-outlined">calculate</i></a>
+          <a href=#><i class="material-symbols-outlined">tips_and_updates</i></a>
         </div>
+        
+
+        <div class="sidenav-bot">
+          <div>
+            <img id="profile-photo" src="./assets/images/default_profile_photo.jpeg">
+          </div> 
+          <br>
+          <div>
+            Logout
+          </div>
+        </div>
+
+      </div>
+      <div id="welcome">
+        <p >Welcome to Budgit</p>
+      </div>
+      <div class="main">
+        <div class="left-panel" >
+          <div class="daily-spending">
+            <p class="chart-headers">Daily Spending
+            </p>
+            <canvas id="daily-spending-chart"></canvas>
+          </div>
+          <div id="daily-transactions">
+            <p class="chart-headers">Daily Transactions
+            </p>
+            <ul>
+              <li>Adidas Clothing 11/11/2022 $55</li>
+            </ul>
+          </div>
+        </div>
+        <div class="right-panel">
+          <div class="monthly-spending">
+            <p class="chart-headers">
+              Monthly Spending History
+            </p>
+            <canvas id="monthly-chart"></canvas>
+            <div id="spending-category">
+              <p class="chart-headers">Spending Categories
+              </p>
+            <canvas id="category-chart"></canvas>
+            </div>
+          </div>     
+
+
       </div>
 
     </div>
-    <div class="main">
-      Welcome to Budgit <br>
-      Daily Spending
-      <div class="daily-spending">
-        <canvas id="myChart"></canvas>
-      </div>
-      <div>
-        Monthly Spending History
-      </div>
-      <div>
-        Spending Categories
-      </div>
-      <div>
-        Enter New Expense
-      </div>
-
-    </div>
-
-
       
     
   </body>
