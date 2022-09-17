@@ -62,22 +62,8 @@ body {
   font-size: 45px;
   color: #818181;
 }
-
 #welcome p {
   padding: 2% 0 0 5%;
-}
-
-.left-panel {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-}
-
-.right-panel {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  padding: 0 0 0 10%;
 }
 
 .chart-headers {
@@ -87,6 +73,18 @@ body {
   color: darkslategrey
 }
 
+.left-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.right-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0 0 0 10%;
+}
 .daily-spending {
   width: 500px;
   height: 400px;
@@ -95,6 +93,28 @@ body {
 #daily-transactions {
   display: flex;
   flex-direction: column;
-  padding: 20% 0 5% 0;
+  /* padding: 20% 0 5% 0; */
 }
+
+.monthly-charts {
+  display:flex;
+  justify-content: space-evenly;
+}
+.ms-chart {
+  width: 50%;
+  height: auto;
+}
+.mi-chart {
+  width: 50%;
+  height: auto;
+}
+
+#spending-category {
+  padding: 20% 0 0 0 ;
+  width: 500px;
+  height: 400px;
+}
+
+
+
 
