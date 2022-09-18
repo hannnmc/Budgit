@@ -1,18 +1,32 @@
 import Chart from 'chart.js/auto';
 
-const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+const monthNames = ["jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+function getPreviousDay(date = new Date()) {
+    const previous = new Date(date.getTime());
+    previous.setDate(date.getDate() - 1);
+  
+    return previous;
+}
+
+const days = [];
+let day = new Date();
+while (days.length < 7) {
+    days.unshift(day);
+    day = getPreviousDay(day);
+}
 
 document.addEventListener("DOMContentLoaded", e => {
 
     const today = new Date();
     const labels = [
-        'January',
-        'February',
-        'March',
-        'April',
-        'May',
-        'June',
-        `${monthNames[today.getMonth()]} ${today.getDate()}`
+        `${monthNames[today.getMonth()]} ${days[0].getDate()}`,
+        `${monthNames[today.getMonth()]} ${days[1].getDate()}`,
+        `${monthNames[today.getMonth()]} ${days[2].getDate()}`,
+        `${monthNames[today.getMonth()]} ${days[3].getDate()}`,
+        `${monthNames[today.getMonth()]} ${days[4].getDate()}`,
+        `${monthNames[today.getMonth()]} ${days[5].getDate()}`,
+        `${monthNames[today.getMonth()]} ${days[6].getDate()}`
       ];
     const data = {
     labels: labels,

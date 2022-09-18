@@ -1,5 +1,12 @@
 import Chart from 'chart.js/auto';
 
+const monthNames = ["jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+function getFirstDayPrevMonth() {
+  const date = new Date();
+  return new Date(date.getFullYear(), date.getMonth() - 1, 1);
+}
+
 document.addEventListener("DOMContentLoaded", e => {
   const labels = [
       'January',
