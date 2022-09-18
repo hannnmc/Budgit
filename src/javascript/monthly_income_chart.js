@@ -1,5 +1,6 @@
 import Chart from 'chart.js/auto';
 
+
 document.addEventListener("DOMContentLoaded", e => {
   const labels = [
       'January',
@@ -36,6 +37,7 @@ document.addEventListener("DOMContentLoaded", e => {
       },
       },
   };  
+
   const myChart = new Chart(
       document.getElementById('mi-chart'),
       config

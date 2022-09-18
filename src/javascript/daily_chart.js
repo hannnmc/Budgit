@@ -1,7 +1,19 @@
 import Chart from 'chart.js/auto';
 
+const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
 document.addEventListener("DOMContentLoaded", e => {
-    const labels = Utils.months({count: 7}) 
+
+    const today = new Date();
+    const labels = [
+        'January',
+        'February',
+        'March',
+        'April',
+        'May',
+        'June',
+        `${monthNames[today.getMonth()]} ${today.getDate()}`
+      ];
     const data = {
     labels: labels,
     datasets: [{
@@ -44,7 +56,7 @@ document.addEventListener("DOMContentLoaded", e => {
         document.getElementById('daily-spending-chart'),
         config
     );
-  
+
 });
 
  
