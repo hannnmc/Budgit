@@ -96,14 +96,19 @@ body {
 .monthly-charts {
   display:flex;
   justify-content: space-evenly;
+  width: 500px;
+  height: auto;
 }
 .ms-chart {
-  width: 50%;
-  height: auto;
+  /* width: 40%; */
+  /* height: auto; */
+  padding: 15% 0 0 0;
 }
 .mi-chart {
-  width: 50%;
-  height: auto;
+  /* width: 40%; */
+  /* height: auto; */
+  padding: 15% 0 0 0;
+
 }
 
 #spending-category {

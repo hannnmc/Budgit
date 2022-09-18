@@ -1,20 +1,34 @@
 import Chart from 'chart.js/auto';
 
+const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+function getFirstDayPrevMonth(day) {
+  const date = new Date(day);
+  return new Date(date.getFullYear(), date.getMonth() - 1, 1);
+}
 
 document.addEventListener("DOMContentLoaded", e => {
+
+  const days = [];
+  let day = new Date();
+  while (days.length < 3) {
+      days.unshift(day);
+      day = getFirstDayPrevMonth(day);
+  }
+
+  console.log(getFirstDayPrevMonth(days[0]))
+
   const labels = [
-      'January',
-      'February',
-      'March',
-      'April',
-      'May',
-      'June',
-  ];
+      `${monthNames[days[0].getMonth()]}`,
+      `${monthNames[days[1].getMonth()]}`,
+      `${monthNames[days[2].getMonth()]}`
+    ];
+
   const data = {
   labels: labels,
   datasets: [{
       label: 'My First Dataset',
-      data: [65, 59, 80, 81, 56, 55, 40],
+      data: [56, 55, 40],
       backgroundColor: [
         'rgba(75, 192, 192, 0.8)'
       ],
@@ -33,8 +47,16 @@ document.addEventListener("DOMContentLoaded", e => {
         plugins: {
           legend: {
           display: false
+          },
+          title: {
+            display: true,
+            text: 'Income',
+            padding: {
+              top: 10,
+              bottom: 30
+            }
           }
-      },
+        },
       },
   };  
 
