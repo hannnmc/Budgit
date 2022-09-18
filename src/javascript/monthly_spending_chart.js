@@ -16,8 +16,6 @@ document.addEventListener("DOMContentLoaded", e => {
       day = getFirstDayPrevMonth(day);
   }
 
-  console.log(getFirstDayPrevMonth(days[0]))
-
   const labels = [
       `${monthNames[days[0].getMonth()]}`,
       `${monthNames[days[1].getMonth()]}`,
@@ -32,10 +30,6 @@ document.addEventListener("DOMContentLoaded", e => {
       backgroundColor: [
         'rgba(255, 205, 86, 0.8)'
       ],
-      borderColor: [
-        'rgba(255, 205, 86, 0.8)'
-      ],
-      borderWidth: 1,
       barThickness: 8,
       borderRadius: 10
   }]
