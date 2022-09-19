@@ -1,5 +1,5 @@
 body {
-  font-family: helvetica;
+  font-family: sans-serif;
 }
 
 /* #container {
@@ -21,7 +21,7 @@ body {
   background-color:whitesmoke;
 }
 .sidenav a:hover {
-  color: #f1f1f1;
+  color: #c0bcbce2;
 }
 
 .sidenav a{
@@ -76,21 +76,65 @@ body {
   justify-content: flex-start;
 }
 
-.right-panel {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  padding: 0 0 0 10%;
-}
 .daily-spending {
   width: 500px;
   height: 400px;
+}
+
+#add-expense {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+input {
+  color:#81818198;
+  width: 20%;
+  height: 60%;
+  border-radius: 5px;
+  border: 1px solid darkslategray;
 }
 
 #daily-transactions {
   display: flex;
   flex-direction: column;
   /* padding: 20% 0 5% 0; */
+}
+
+#daily-table {
+  color:darkslategrey;
+}
+tr:nth-child(even) {
+  background-color: #ccd0d85d;
+}
+td {
+  padding: 7px;
+}
+
+table .amount-col {
+  text-align: right;
+}
+
+table .item-col {
+  width: 30%;
+}
+
+button {
+  border-radius: 12px;
+  background-color: #1463f3;;
+  color: white;
+  font-weight: 900;
+  width: 20%;
+  align-self:flex-end;
+  padding: .5% .5% .8% .5%;
+  margin-left: 5%;
+}
+
+.right-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 0 0 0 10%;
 }
 
 .monthly-charts {
