@@ -16,9 +16,7 @@
   <body>
 
     <div id="container">
-
       <div class="sidenav"> 
-
         <div class="sidenav-links">
           <a href=#><i class="material-symbols-outlined">menu</i></a>
           <br>
@@ -28,15 +26,14 @@
           <a href=#><i class="material-symbols-outlined">calculate</i></a>
           <a href=#><i class="material-symbols-outlined">tips_and_updates</i></a>
         </div>
-        
 
         <div class="sidenav-bot">
-          <div>
+          <div class="avatar">
             <img id="profile-photo" src="./assets/images/default_profile_photo.jpeg">
           </div> 
           <br>
           <div>
-            Logout
+            <a href=#><i class="material-symbols-outlined">logout</i></a>
           </div>
         </div>
 
@@ -45,36 +42,62 @@
         <p >Welcome to Budgit</p>
       </div>
       <div class="main">
+
         <div class="left-panel" >
           <div class="daily-spending">
-            <p class="chart-headers">Daily Spending
-            </p>
+            <p class="chart-headers">Daily Spending</p>
             <canvas id="daily-spending-chart"></canvas>
           </div>
           <div id="daily-transactions">
-            <p class="chart-headers">Daily Transactions
-            </p>
-            <ul>
-              <li>Adidas Clothing 11/11/2022 $55</li>
-            </ul>
+            <p class="chart-headers">Daily Transactions</p>
+
+            <form id="add-expense">
+              <input id="item" type="text" maxlength="30" onfocus="this.value=''" placeholder="Item">
+              <select name="category" id="category">
+                <option value="none" selected disabled hidden>Select Option</option>
+                <option value="Food">Food</option>
+                <option value="Entertainment">Entertainment</option>
+                <option value="Merchandise">Merchandise</option>
+                <option value="Transportation">Transportation</option>
+                <option value="Housing">Housing</option>
+                <option value="Bills">Utilities/Bills</option>
+                <option value="Other">Other</option>
+              </select>
+              <input id="amount" type="number" step="0.01" onfocus="this.value=''" placeholder=0.0>
+
+              <button type="submit">Add</button>
+            </form>
+            <p id="error"></p>
+            <br>
+            <table id="daily-table">
+              <tr>
+                <td class="item-col">Item</td>
+                <td class="category-col">Category</td>
+                <td class="amount-col">Amount</td>
+              </tr>
+            </table>
+            
           </div>
         </div>
+
         <div class="right-panel">
-          <div class="monthly-spending">
-            <p class="chart-headers">
-              Monthly Spending History
-            </p>
-            <canvas id="monthly-chart"></canvas>
-            <div id="spending-category">
-              <p class="chart-headers">Spending Categories
-              </p>
-            <canvas id="category-chart"></canvas>
+          <div class="monthly-overview">
+            <p class="chart-headers">Monthly Overview</p>
+            <div class="monthly-charts">
+              <div class="ms-chart">
+                <canvas id="ms-chart"></canvas>
+              </div>
+              <div class="mi-chart">
+                <canvas id="mi-chart"></canvas>
+              </div>
             </div>
-          </div>     
-
-
-      </div>
-
+          </div>
+          <div id="spending-category">
+            <p class="chart-headers">Spending Categories</p>
+            <canvas id="category-chart"></canvas>
+          </div>
+        </div>
+        
     </div>
       
     
