@@ -1,6 +1,11 @@
 import Chart from 'chart.js/auto';
 
+const budgitData = [];
 const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+if (!localStorage.getItem('bData')) {
+    localStorage.setItem('bData', '[]')
+}
 
 function getPreviousDay(date = new Date()) {
     const previous = new Date(date.getTime());
@@ -131,18 +136,67 @@ document.addEventListener("DOMContentLoaded", e => {
 
         parseFloat(dailyTotal);
         dailyTotal += (parseFloat(amount));
-        console.log(dailyTotal)
+        updateValue(dailyTotal);
+        updateLS(updateBData(amount));
         }
 
-        updateValue(dailyTotal)
     };
 
     function updateValue(val,label = today) {
         const index = labels.indexOf(label);
-        console.log(index);
         myChart.config.data.datasets[0].data[index] = val;
         myChart.update();
     }
+
+    function updateBData (val,time = new Date()){
+        const entry = {};
+        let m = monthNames[time.getMonth()];
+        let d = time.getDate();
+        let y = time.getFullYear();
+        entry.y = y;
+        entry.m = m;
+        entry.d = d;
+        entry.amount = val;
+        return entry;
+    }
+
+    function updateLS(data) {
+        let old =  JSON.parse(localStorage.getItem('bData'));
+        localStorage.setItem('bData', JSON.stringify([...old, data]));
+    }
+
+    function getLSD(time = new Date()){
+        const m = monthNames[time.getMonth()];
+        const d = time.getDate();
+        const y = time.getFullYear();
+        const bData = JSON.parse(localStorage.getItem('bData'));
+        if (bData){
+            const list = 
+            bData.filter(obj => obj.y === y && obj.m === m && obj.d === d)
+            let sum = parseFloat(0);
+            list.forEach( obj => {
+                sum += parseFloat(obj.amount);
+            })
+            return sum;
+       }
+    }
+    
+    function getLSM(time = new Date()) {
+        const m = monthNames[time.getMonth()];
+        const y = time.getFullYear();
+        const bData = JSON.parse(localStorage.getItem('bData'));
+        if (bData){
+            const list = 
+            bData.filter(obj => obj.y === y && obj.m === m)
+            let sum = parseFloat(0);
+            list.forEach( obj => {
+                sum += parseFloat(obj.amount);
+            })
+            return sum;
+       }
+    }
+
+    window.getLSM = getLSM;
+    
 });
 
- 

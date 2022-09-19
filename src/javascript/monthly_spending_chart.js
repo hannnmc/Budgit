@@ -25,8 +25,8 @@ document.addEventListener("DOMContentLoaded", e => {
   const data = {
   labels: labels,
   datasets: [{
-      label: 'My First Dataset',
-      data: [2375, 3120, 2850],
+      label: 'Total Expense',
+      data: [199, 180, getLSM()],
       backgroundColor: [
         'rgba(255, 205, 86, 0.8)'
       ],
