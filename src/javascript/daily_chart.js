@@ -46,7 +46,8 @@ document.addEventListener("DOMContentLoaded", e => {
     const config = {
         type: 'bar',
         data: data,
-        options: {    
+        options: {
+            // maintainAspectRatio: false,
             plugins: {
                 legend: {
                 display: false

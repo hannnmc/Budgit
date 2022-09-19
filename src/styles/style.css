@@ -1,12 +1,6 @@
 body {
   font-family: sans-serif;
-  /* width: 100%;
-  height: 100%; */
 }
-
-/* #container {
-  width:auto;
-} */
 
 .sidenav {
   display:flex;
@@ -18,7 +12,7 @@ body {
   position:fixed;
   top: 0;
   left: 0;
-  padding-top: 5%;
+  padding-top: 3%;
   border-right: grey solid 2px;
   background-color:whitesmoke;
 }
@@ -38,12 +32,19 @@ body {
 .sidenav-bot {
   display:flex;
   flex-direction: column;
-  flex-grow: .165;
+  align-items: center;
+  flex-grow: .13;
+}
+
+.avatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #profile-photo {
-  width: 50px;
-  height: auto;
+  width: 75%;
+  border-radius: 50%;
 }
 
 #welcome {
@@ -105,7 +106,7 @@ input:focus {
 
 select {
   color:darkslategray;
-  width: 25%;
+  width: 28%;
   height: 75%;
   border-radius: 5px;
   border: 1px solid darkslategray;
@@ -114,7 +115,6 @@ select {
 #daily-transactions {
   display: flex;
   flex-direction: column;
-  /* padding: 20% 0 5% 0; */
 }
 
 #daily-table {
@@ -135,6 +135,12 @@ table .item-col {
   width: 30%;
 }
 
+#error {
+  color: red;
+  font-size: 12px;
+  padding-left: 2%;
+}
+
 button {
   border-radius: 12px;
   background-color: #1463f3;;
@@ -150,7 +156,7 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding: 0 0 0 10%;
+  padding: 0 0 0 13%;
 }
 
 .monthly-charts {
@@ -173,7 +179,7 @@ button {
 }
 
 #spending-category {
-  padding: 20% 0 0 0 ;
+  padding: 3% 0 0 0 ;
   width: 500px;
   height: 400px;
 }
