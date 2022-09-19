@@ -94,6 +94,13 @@ input {
   border-radius: 5px;
   border: 1px solid darkslategray;
 }
+select {
+  color:darkslategray;
+  width: 25%;
+  height: 75%;
+  border-radius: 5px;
+  border: 1px solid darkslategray;
+}
 
 #daily-transactions {
   display: flex;

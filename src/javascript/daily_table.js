@@ -1,12 +1,9 @@
-// const insertRow = function insert_Row() {
-//     let row =document.getElementById('daily-table').insertRow(0);
-//     let item = row.insertCell(-1);
-//     let category = row.insertCell(1);
-//     let amount = row.insertCell(2);
-//     item.innerHTML="New Cell1";
-//     category.innerHTML="New Cell2";
-//     amount.innerHTML="New Cell2";
-//     amount.classList.add("amount-col");
-//   }
+// const form = document.getElementById('add-expense').addEventListener("submit", addExpense())
 
-// export default insertRow();
+// function addExpense() { 
+//     console.log(document.getElementById('item').value);
+//     console.log(document.getElementById('category').value);
+//     console.log(document.getElementById('amount').value);
+
+//     return false;
+// };
