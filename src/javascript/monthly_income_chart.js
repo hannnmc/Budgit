@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", e => {
   labels: labels,
   datasets: [{
       label: 'My First Dataset',
-      data: [56, 55, 40],
+      data: [4570, 4570, 4875],
       backgroundColor: [
         'rgba(75, 192, 192, 0.8)'
       ],
@@ -38,6 +38,7 @@ document.addEventListener("DOMContentLoaded", e => {
       type: 'bar',
       data: data,
       options: {
+        maintainAspectRatio: false,
         plugins: {
           legend: {
           display: false

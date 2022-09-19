@@ -88,12 +88,18 @@ body {
 }
 
 input {
-  color:#81818198;
+  /* color:#81818198; */
+  color: darkslategray;
   width: 20%;
   height: 60%;
   border-radius: 5px;
   border: 1px solid darkslategray;
 }
+
+input:focus {
+  color: darkslategray;
+}
+
 select {
   color:darkslategray;
   width: 25%;
@@ -133,7 +139,7 @@ button {
   font-weight: 900;
   width: 20%;
   align-self:flex-end;
-  padding: .5% .5% .8% .5%;
+  padding: .5% .5% .7% .5%;
   margin-left: 5%;
 }
 
@@ -147,18 +153,19 @@ button {
 .monthly-charts {
   display:flex;
   justify-content: space-evenly;
+  align-items: center;
   width: 500px;
   height: auto;
 }
 .ms-chart {
-  /* width: 40%; */
-  /* height: auto; */
-  padding: 15% 0 0 0;
+  width: 40%;
+  height: 200px;
+  padding: 10% 0 15% 0;
 }
 .mi-chart {
-  /* width: 40%; */
-  /* height: auto; */
-  padding: 15% 0 0 0;
+  width: 40%;
+  height: 200px;
+  padding: 10% 0 15% 0;
 
 }
 
