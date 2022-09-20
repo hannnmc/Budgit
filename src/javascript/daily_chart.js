@@ -42,8 +42,6 @@ document.addEventListener("DOMContentLoaded", e => {
         `${monthNames[days[6].getMonth()]} ${days[6].getDate()}`
     ];
 
-    let today = labels[6];
-
     const data = {
     labels: labels,
     datasets: [{
@@ -97,7 +95,11 @@ document.addEventListener("DOMContentLoaded", e => {
         document.getElementById('daily-spending-chart'),
         config
     );
-    
+
+    // onclick event
+    document.getElementById('add-expense').addEventListener("submit", addExpense)
+
+    // insert row to table
     function insertRow(i,c,a) {
         let row =document.getElementById('daily-table').insertRow(-1);
         let item = row.insertCell(-1);
@@ -115,8 +117,7 @@ document.addEventListener("DOMContentLoaded", e => {
         delRow.setAttribute('id','delete-col');
     }
 
-    document.getElementById('add-expense').addEventListener("submit", addExpense)
-
+    // adds expense by calling insert row, updateLS, and updateValue
     function addExpense(e) { 
         e.preventDefault();
         const item = (document.getElementById('item').value);
@@ -139,12 +140,14 @@ document.addEventListener("DOMContentLoaded", e => {
 
     };
 
-    function updateValue(val,label = today) {
+    // update chart values and refresh chart
+    function updateValue(val,label = labels[6]) {
         const index = labels.indexOf(label);
         myChart.config.data.datasets[0].data[index] = val;
         myChart.update();
     }
 
+    // create new entry to be stored in local storage
     function createEntry (item,category,val,time = new Date()){
         const entry = {};
         let m = monthNames[time.getMonth()];
@@ -159,61 +162,56 @@ document.addEventListener("DOMContentLoaded", e => {
         return entry;
     }
 
+    // update local storage
     function updateLS(data) {
         let old =  JSON.parse(localStorage.getItem('bData'));
         localStorage.setItem('bData', JSON.stringify([...old, data]));
     }
-
-    function getLSD(time = new Date()){
-        const m = monthNames[time.getMonth()];
-        const d = time.getDate();
-        const y = time.getFullYear();
-        const bData = JSON.parse(localStorage.getItem('bData'));
-        if (bData){
-            const list = 
-            bData.filter(obj => obj.y === y && obj.m === m && obj.d === d)
-            let sum = parseFloat(0);
-            list.forEach( obj => {
-                sum += parseFloat(obj.amount);
-            })
-            return sum;
-       }
-    }
     
-    function getLSM(time = new Date()) {
-        const m = monthNames[time.getMonth()];
-        const y = time.getFullYear();
-        const bData = JSON.parse(localStorage.getItem('bData'));
-        if (bData){
-            const list = 
-            bData.filter(obj => obj.y === y && obj.m === m)
-            let sum = parseFloat(0);
+    // get monthly total spending
+    function getLSM(time = new Date(),income = false) {
+        let list = getLSMList(time);
+        let sum = parseFloat(0);
             list.forEach( obj => {
                 sum += parseFloat(obj.amount);
             })
-            return sum;
-       }
+        return sum;
     }
 
-    function getLSMList(time = new Date()){
+    // get a list of monthly spending or income transactions
+    function getLSMList(time = new Date(),income = false){
         const m = monthNames[time.getMonth()];
         const y = time.getFullYear();
         const bData = JSON.parse(localStorage.getItem('bData'));
         let list = [];
-        if (bData){
-            list = bData.filter(obj => obj.y === y && obj.m === m)    
+        if (bData && !income){
+            list = bData.filter(obj => obj.y === y && obj.m === m && obj.category !== 'Income')    
+        } else if (bData && income) {
+            list = bData.filter(obj => obj.y === y && obj.m === m && obj.category === 'Income')  
         }
         return list;
     }
 
-    function getLSDList(time = new Date()){
+    // get daily spending
+    function getLSD(time = new Date(), income = false){
+        let list = getLSDList(time, income);
+        let sum = parseFloat(0);
+        list.forEach( obj => {
+            sum += parseFloat(obj.amount);
+        })
+        return sum;
+    }
+
+
+    // get list of daily transaction
+    function getLSDList(time = new Date(),income = false){
         const m = monthNames[time.getMonth()];
         const d = time.getDate();
         const y = time.getFullYear();
         const bData = JSON.parse(localStorage.getItem('bData'));
         let list = [];
         if (bData){
-            list = bData.filter(obj => obj.y === y && obj.m === m && obj.d === d)    
+            list = bData.filter(obj => obj.y === y && obj.m === m && obj.d === d && obj.category !== 'Income')    
         }
         return list;
     }

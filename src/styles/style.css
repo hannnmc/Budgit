@@ -83,6 +83,7 @@ body {
 .daily-spending {
   width: 500px;
   height: 385px;
+  z-index: 1;
 }
 
 #add-expense {
