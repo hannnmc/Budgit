@@ -92,8 +92,7 @@ document.addEventListener("DOMContentLoaded", e => {
         })
         myChart.update();
     }
-    
-    window.categorySpending = myChart;
+
     window.updateCategory = updateValue;
 });
 

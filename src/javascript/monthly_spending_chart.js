@@ -58,22 +58,30 @@ document.addEventListener("DOMContentLoaded", e => {
       document.getElementById('ms-chart'),
       config
   );
-  document.getElementById('add-expense').addEventListener("submit", updateChart)
+  document.getElementById('add-expense').addEventListener("submit", updateValue)
 
   let current = labels[labels.length - 1]
 
-  function updateValue(val,label = current) {
-    const index = labels.indexOf(label);
-    myChart.config.data.datasets[0].data[index] = val;
-    myChart.update();
-  }
+  // function updateValue(val = getLSM(),label = current) {
+  //   const index = labels.indexOf(label);
+  //   myChart.config.data.datasets[0].data[index] = val;
+  //   myChart.update();
+  // }
 
-  function updateChart() {
-    updateValue(getLSM());
+  function updateValue() {
+    days.forEach(day => {
+        let index = days.indexOf(day);
+        myChart.config.data.datasets[0].data[index] = getLSM(day);
+    })
     myChart.update();
-  }
+}
 
-  window.monthlySpending = myChart;
+  // function updateChart() {
+  //   updateValue(getLSM());
+  //   myChart.update();
+  // }
+
+  window.updateMontlyS = updateValue;
 });
 
  

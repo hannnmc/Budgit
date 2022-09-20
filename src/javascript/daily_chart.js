@@ -155,7 +155,7 @@ document.addEventListener("DOMContentLoaded", e => {
     };
 
     // update chart values and refresh chart
-    function updateValue(val,label = labels[6]) {
+    function updateValue(val=getLSD(),label = labels[6]) {
         const index = labels.indexOf(label);
         myChart.config.data.datasets[0].data[index] = val;
         myChart.update();
@@ -264,16 +264,13 @@ document.addEventListener("DOMContentLoaded", e => {
         row.parentNode.removeChild(row);
     }
 
-    let dailyChart = myChart;
 
     function updateGraphs(){
-        // dailyChart.update();
-        // monthlySpending.update();
-        // monthlyIncome.update();
         updateValue();
-
-        // location.reload();
+        updateCategory();
+        updateMontlyS();
     }   
+
 
     window.getLSM = getLSM;
     window.getLSMList = getLSMList;

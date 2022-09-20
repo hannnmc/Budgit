@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", e => {
     localStorage.setItem('bData', JSON.stringify([...old, data]));
   }
   
-  window.monthlyIncome = myChart;
+  // window.monthlyIncome = myChart;
 });
 
  
