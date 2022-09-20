@@ -25,6 +25,13 @@ document.addEventListener("DOMContentLoaded", e => {
         day = getPreviousDay(day);
     }
 
+    if(getLSDList()) {
+        let list = getLSDList();
+        list.forEach( row => {
+            insertRow(row.item,row.category,row.amount);
+        })
+    }
+
     const labels = [
         `${monthNames[days[0].getMonth()]} ${days[0].getDate()}`,
         `${monthNames[days[1].getMonth()]} ${days[1].getDate()}`,
@@ -91,7 +98,7 @@ document.addEventListener("DOMContentLoaded", e => {
         config
     );
     
-    function insert_Row(i,c,a) {
+    function insertRow(i,c,a) {
         let row =document.getElementById('daily-table').insertRow(-1);
         let item = row.insertCell(-1);
         let category = row.insertCell(1);
@@ -120,8 +127,8 @@ document.addEventListener("DOMContentLoaded", e => {
                 error.style.display = 'none';
               }, 3000); 
         } else {
-        insert_Row(item,category,amount);
-        updateLS(createEntry(amount));
+        insertRow(item,category,amount);
+        updateLS(createEntry(item,category,amount));
         parseFloat(getLSD());
         updateValue(getLSD());
         }
@@ -134,7 +141,7 @@ document.addEventListener("DOMContentLoaded", e => {
         myChart.update();
     }
 
-    function createEntry (val,time = new Date()){
+    function createEntry (item,category,val,time = new Date()){
         const entry = {};
         let m = monthNames[time.getMonth()];
         let d = time.getDate();
@@ -142,6 +149,8 @@ document.addEventListener("DOMContentLoaded", e => {
         entry.y = y;
         entry.m = m;
         entry.d = d;
+        entry.item = item;
+        entry.category = category;
         entry.amount = val;
         return entry;
     }
@@ -182,6 +191,53 @@ document.addEventListener("DOMContentLoaded", e => {
        }
     }
 
+    function getLSDList(time = new Date()){
+        const m = monthNames[time.getMonth()];
+        const d = time.getDate();
+        const y = time.getFullYear();
+        const bData = JSON.parse(localStorage.getItem('bData'));
+        let list = [];
+        if (bData){
+            list = bData.filter(obj => obj.y === y && obj.m === m && obj.d === d)    
+        }
+        return list;
+    }
+
+    function removeExpense(time = new Date()){
+        const bData = JSON.parse(localStorage.getItem('bData'));
+        console.log(bData)
+        const m     = monthNames[time.getMonth()],
+              d     = time.getDate(),
+              y     = time.getFullYear(),
+              i     = 'Nikes',
+              c     = 'Merchandise',
+              a     = 120.00;
+
+        if (bData){
+            let item = bData.filter(obj => 
+                obj.y === y 
+                && obj.m === m 
+                && obj.d === d 
+                && obj.item === i 
+                && obj.category === c 
+                && parseFloat(obj.amount) === a
+            )
+            if (item.length > 0){
+                bData.splice(bData.indexOf(item[0]),1);
+                localStorage.setItem('bData', JSON.stringify(bData));
+                // removeRow
+                location.reload();
+            }
+            console.log(bData)
+        }
+    }
+
+    removeExpense();
+
+    // function removeRow(o){
+    //     var p=o.parentNode.parentNode;
+    //         p.parentNode.removeChild(p);
+    // }
     window.getLSM = getLSM;
     
 });
