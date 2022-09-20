@@ -25,43 +25,31 @@ document.addEventListener("DOMContentLoaded", e => {
         day = getPreviousDay(day);
     }
 
-    let monthArray = [
-        monthNames[days[0].getMonth()],
-        monthNames[days[1].getMonth()],
-        monthNames[days[2].getMonth()],
-        monthNames[days[3].getMonth()],
-        monthNames[days[4].getMonth()],
-        monthNames[days[5].getMonth()],
-        monthNames[days[6].getMonth()]
-    ];
-
-    let dayArray = [
-        days[0].getDate(),
-        days[1].getDate(),
-        days[2].getDate(),
-        days[3].getDate(),
-        days[4].getDate(),
-        days[5].getDate(),
-        days[6].getDate()
-    ];
-
     const labels = [
-        `${monthArray[0]} ${dayArray[0]}`,
-        `${monthArray[1]} ${dayArray[1]}`,
-        `${monthArray[2]} ${dayArray[2]}`,
-        `${monthArray[3]} ${dayArray[3]}`,
-        `${monthArray[4]} ${dayArray[4]}`,
-        `${monthArray[5]} ${dayArray[5]}`,
-        `${monthArray[6]} ${dayArray[6]}`
+        `${monthNames[days[0].getMonth()]} ${days[0].getDate()}`,
+        `${monthNames[days[1].getMonth()]} ${days[1].getDate()}`,
+        `${monthNames[days[2].getMonth()]} ${days[2].getDate()}`,
+        `${monthNames[days[3].getMonth()]} ${days[3].getDate()}`,
+        `${monthNames[days[4].getMonth()]} ${days[4].getDate()}`,
+        `${monthNames[days[5].getMonth()]} ${days[5].getDate()}`,
+        `${monthNames[days[6].getMonth()]} ${days[6].getDate()}`
     ];
 
-    let today = `${monthArray[6]} ${dayArray[6]}`
+    let today = labels[6];
 
     const data = {
     labels: labels,
     datasets: [{
         label: 'Daily Spending',
-        data: [65, 59, 80, 81, 56, 55, dailyTotal],
+        data: [
+            getLSD(days[0]),
+            getLSD(days[1]),
+            getLSD(days[2]),
+            getLSD(days[3]),
+            getLSD(days[4]),
+            getLSD(days[5]),
+            getLSD(days[6])
+        ],
         backgroundColor: [
         'rgba(255, 99, 132, .9)',
         'rgba(255, 159, 64, .9)',
@@ -133,11 +121,9 @@ document.addEventListener("DOMContentLoaded", e => {
               }, 3000); 
         } else {
         insert_Row(item,category,amount);
-
-        parseFloat(dailyTotal);
-        dailyTotal += (parseFloat(amount));
-        updateValue(dailyTotal);
-        updateLS(updateBData(amount));
+        updateLS(createEntry(amount));
+        parseFloat(getLSD());
+        updateValue(getLSD());
         }
 
     };
@@ -148,7 +134,7 @@ document.addEventListener("DOMContentLoaded", e => {
         myChart.update();
     }
 
-    function updateBData (val,time = new Date()){
+    function createEntry (val,time = new Date()){
         const entry = {};
         let m = monthNames[time.getMonth()];
         let d = time.getDate();

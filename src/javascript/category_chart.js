@@ -3,11 +3,14 @@ import Chart from 'chart.js/auto';
 document.addEventListener("DOMContentLoaded", e => {
     const data = {
         labels: [
-            'Red',
-            'Green',
-            'Yellow',
-            'Grey',
-            'Blue'
+            'Food',
+            'Entertainment',
+            'Merchandise',
+            'Transportation',
+            'Housing',
+            'Bills',
+            'Other'
+            
         ],
         datasets: [{
             label: 'My First Dataset',

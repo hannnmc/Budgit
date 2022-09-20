@@ -8,7 +8,6 @@ function getFirstDayPrevMonth(day) {
 }
 
 document.addEventListener("DOMContentLoaded", e => {
-
   const days = [];
   let day = new Date();
   while (days.length < 3) {
@@ -26,7 +25,7 @@ document.addEventListener("DOMContentLoaded", e => {
   labels: labels,
   datasets: [{
       label: 'Total Expense',
-      data: [199, 180, getLSM()],
+      data: [getLSM(days[0]), getLSM(days[1]), getLSM()],
       backgroundColor: [
         'rgba(255, 205, 86, 0.8)'
       ],
@@ -59,7 +58,21 @@ document.addEventListener("DOMContentLoaded", e => {
       document.getElementById('ms-chart'),
       config
   );
-  
+  document.getElementById('add-expense').addEventListener("submit", updateChart)
+
+  let current = labels[labels.length - 1]
+
+  function updateValue(val,label = current) {
+    const index = labels.indexOf(label);
+    myChart.config.data.datasets[0].data[index] = val;
+    myChart.update();
+  }
+
+  function updateChart() {
+    updateValue(getLSM());
+    myChart.update();
+  }
+
 });
 
  
