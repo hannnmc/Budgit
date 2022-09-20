@@ -91,12 +91,10 @@ document.addEventListener("DOMContentLoaded", e => {
             myChart.config.data.datasets[0].data[index] = getCatTotal (label);
         })
         myChart.update();
-      }
+    }
     
-    //   function updateChart() {
-    //     updateValue(getLSM());
-    //     myChart.update();
-    //   }
+    window.categorySpending = myChart;
+    window.updateCategory = updateValue;
 });
 
  

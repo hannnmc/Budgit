@@ -14,7 +14,6 @@ function getPreviousDay(date = new Date()) {
     return previous;
 }
 
-let dailyTotal = 0;
 
 document.addEventListener("DOMContentLoaded", e => {
 
@@ -30,7 +29,6 @@ document.addEventListener("DOMContentLoaded", e => {
         let list = getLSDList(new Date(), true, true);
         list.forEach( (row) => {
             insertRow(row.item,row.category,row.amount);
-
         })
     }
 
@@ -105,7 +103,6 @@ document.addEventListener("DOMContentLoaded", e => {
     function insertRow(i,c,a) {
         let table = document.getElementById('daily-table');
         let row = document.createElement('tr');
-        // let row =document.getElementById('daily-table').insertRow(-1);
         let item = row.insertCell(-1);
         let category = row.insertCell(1);
         let amount = row.insertCell(2);
@@ -120,10 +117,19 @@ document.addEventListener("DOMContentLoaded", e => {
         row.dataset.amount = parseFloat(a).toFixed(2);
         amount.classList.add("amount-col");
         delRow.innerHTML= "<i class='material-symbols-outlined'>delete</i>";
-        delRow.onclick="console.log(this)";
-        delRow.setAttribute('id','delete-col');
+        delRow.addEventListener('click', () => {
+            removeEntry(
+                row.dataset.item,
+                row.dataset.category,
+                row.dataset.amount
+            );
+            removeRow(delRow);
+            updateGraphs();
+        })
         table.appendChild(row);
     }
+
+    
 
     // adds expense by calling insert row, updateLS, and updateValue
     function addExpense(e) { 
@@ -228,38 +234,46 @@ document.addEventListener("DOMContentLoaded", e => {
         return list;
     }
 
-    // function removeExpense(time = new Date()){
-    //     const bData = JSON.parse(localStorage.getItem('bData'));
-    //     console.log(bData)
-    //     const m     = monthNames[time.getMonth()],
-    //           d     = time.getDate(),
-    //           y     = time.getFullYear(),
-    //           i     = 'Nikes',
-    //           c     = 'Merchandise',
-    //           a     = 120.00;
+    function removeEntry(item,category,amount,time = new Date()){
+        const bData = JSON.parse(localStorage.getItem('bData'));
+        const m     = monthNames[time.getMonth()],
+              d     = time.getDate(),
+              y     = time.getFullYear(),
+              i     = item,
+              c     = category,
+              a     = parseFloat(amount);
+        if (bData){
+            let item = bData.filter(obj => 
+                obj.y === y 
+                && obj.m === m 
+                && obj.d === d 
+                && obj.item === i 
+                && obj.category === c 
+                && parseFloat(obj.amount) === a
+            )
+            if (item.length > 0){
+                bData.splice(bData.indexOf(item[0]),1);
+                localStorage.setItem('bData', JSON.stringify(bData));
+            }
+            
+        }
+    }
 
-    //     if (bData){
-    //         let item = bData.filter(obj => 
-    //             obj.y === y 
-    //             && obj.m === m 
-    //             && obj.d === d 
-    //             && obj.item === i 
-    //             && obj.category === c 
-    //             && parseFloat(obj.amount) === a
-    //         )
+    function removeRow(btn) {
+        let row = btn.parentNode;
+        row.parentNode.removeChild(row);
+    }
 
-    //         if (item.length > 0){
-    //             bData.splice(bData.indexOf(item[0]),1);
-    //             localStorage.setItem('bData', JSON.stringify(bData));
-    //             // location.reload();
-    //         }
-    //     }
-    // }
+    let dailyChart = myChart;
 
-    // function removeRow(o){
-    //     var p=o.parentNode.parentNode;
-    //         p.parentNode.removeChild(p);
-    // }
+    function updateGraphs(){
+        // dailyChart.update();
+        // monthlySpending.update();
+        // monthlyIncome.update();
+        updateValue();
+
+        // location.reload();
+    }   
 
     window.getLSM = getLSM;
     window.getLSMList = getLSMList;

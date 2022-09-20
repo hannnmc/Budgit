@@ -73,6 +73,7 @@ document.addEventListener("DOMContentLoaded", e => {
     myChart.update();
   }
 
+  window.monthlySpending = myChart;
 });
 
  
