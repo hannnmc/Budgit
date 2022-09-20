@@ -25,10 +25,12 @@ document.addEventListener("DOMContentLoaded", e => {
         day = getPreviousDay(day);
     }
 
+    // populate table from LS
     if(getLSDList()) {
-        let list = getLSDList();
-        list.forEach( row => {
+        let list = getLSDList(new Date(), true, true);
+        list.forEach( (row) => {
             insertRow(row.item,row.category,row.amount);
+
         })
     }
 
@@ -101,20 +103,26 @@ document.addEventListener("DOMContentLoaded", e => {
 
     // insert row to table
     function insertRow(i,c,a) {
-        let row =document.getElementById('daily-table').insertRow(-1);
+        let table = document.getElementById('daily-table');
+        let row = document.createElement('tr');
+        // let row =document.getElementById('daily-table').insertRow(-1);
         let item = row.insertCell(-1);
         let category = row.insertCell(1);
         let amount = row.insertCell(2);
         let delRow = row.insertCell(3);
         item.innerHTML=i;
+        row.dataset.item = i;
         item.classList.add("item-col");
         category.innerHTML=c;
+        row.dataset.category = c;
         category.classList.add("category-col")
         amount.innerHTML=parseFloat(a).toFixed(2);
+        row.dataset.amount = parseFloat(a).toFixed(2);
         amount.classList.add("amount-col");
         delRow.innerHTML= "<i class='material-symbols-outlined'>delete</i>";
         delRow.onclick="console.log(this)";
         delRow.setAttribute('id','delete-col');
+        table.appendChild(row);
     }
 
     // adds expense by calling insert row, updateLS, and updateValue
@@ -193,8 +201,8 @@ document.addEventListener("DOMContentLoaded", e => {
     }
 
     // get daily spending
-    function getLSD(time = new Date(), income = false){
-        let list = getLSDList(time, income);
+    function getLSD(time = new Date(), income = false, full = false){
+        let list = getLSDList(time, income, full);
         let sum = parseFloat(0);
         list.forEach( obj => {
             sum += parseFloat(obj.amount);
@@ -204,14 +212,18 @@ document.addEventListener("DOMContentLoaded", e => {
 
 
     // get list of daily transaction
-    function getLSDList(time = new Date(),income = false){
+    function getLSDList(time = new Date(),income = false, full = false){
         const m = monthNames[time.getMonth()];
         const d = time.getDate();
         const y = time.getFullYear();
         const bData = JSON.parse(localStorage.getItem('bData'));
         let list = [];
-        if (bData){
-            list = bData.filter(obj => obj.y === y && obj.m === m && obj.d === d && obj.category !== 'Income')    
+        if (bData && !income && !full){
+            list = bData.filter(obj => obj.y === y && obj.m === m && obj.d === d && obj.category !== 'Income') 
+        } else if (bData && income && !full) {
+            list = bData.filter(obj => obj.y === y && obj.m === m && obj.d === d && obj.category === 'Income') 
+        } else if (bData && full) {
+            list = bData.filter(obj => obj.y === y && obj.m === m && obj.d === d) 
         }
         return list;
     }
