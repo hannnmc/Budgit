@@ -103,12 +103,16 @@ document.addEventListener("DOMContentLoaded", e => {
         let item = row.insertCell(-1);
         let category = row.insertCell(1);
         let amount = row.insertCell(2);
+        let delRow = row.insertCell(3);
         item.innerHTML=i;
         item.classList.add("item-col");
         category.innerHTML=c;
         category.classList.add("category-col")
         amount.innerHTML=parseFloat(a).toFixed(2);
         amount.classList.add("amount-col");
+        delRow.innerHTML= "<i class='material-symbols-outlined'>delete</i>";
+        delRow.onclick="console.log(this)";
+        delRow.setAttribute('id','delete-col');
     }
 
     document.getElementById('add-expense').addEventListener("submit", addExpense)
@@ -191,6 +195,17 @@ document.addEventListener("DOMContentLoaded", e => {
        }
     }
 
+    function getLSMList(time = new Date()){
+        const m = monthNames[time.getMonth()];
+        const y = time.getFullYear();
+        const bData = JSON.parse(localStorage.getItem('bData'));
+        let list = [];
+        if (bData){
+            list = bData.filter(obj => obj.y === y && obj.m === m)    
+        }
+        return list;
+    }
+
     function getLSDList(time = new Date()){
         const m = monthNames[time.getMonth()];
         const d = time.getDate();
@@ -203,42 +218,41 @@ document.addEventListener("DOMContentLoaded", e => {
         return list;
     }
 
-    function removeExpense(time = new Date()){
-        const bData = JSON.parse(localStorage.getItem('bData'));
-        console.log(bData)
-        const m     = monthNames[time.getMonth()],
-              d     = time.getDate(),
-              y     = time.getFullYear(),
-              i     = 'Nikes',
-              c     = 'Merchandise',
-              a     = 120.00;
+    // function removeExpense(time = new Date()){
+    //     const bData = JSON.parse(localStorage.getItem('bData'));
+    //     console.log(bData)
+    //     const m     = monthNames[time.getMonth()],
+    //           d     = time.getDate(),
+    //           y     = time.getFullYear(),
+    //           i     = 'Nikes',
+    //           c     = 'Merchandise',
+    //           a     = 120.00;
 
-        if (bData){
-            let item = bData.filter(obj => 
-                obj.y === y 
-                && obj.m === m 
-                && obj.d === d 
-                && obj.item === i 
-                && obj.category === c 
-                && parseFloat(obj.amount) === a
-            )
-            if (item.length > 0){
-                bData.splice(bData.indexOf(item[0]),1);
-                localStorage.setItem('bData', JSON.stringify(bData));
-                // removeRow
-                location.reload();
-            }
-            console.log(bData)
-        }
-    }
+    //     if (bData){
+    //         let item = bData.filter(obj => 
+    //             obj.y === y 
+    //             && obj.m === m 
+    //             && obj.d === d 
+    //             && obj.item === i 
+    //             && obj.category === c 
+    //             && parseFloat(obj.amount) === a
+    //         )
 
-    removeExpense();
+    //         if (item.length > 0){
+    //             bData.splice(bData.indexOf(item[0]),1);
+    //             localStorage.setItem('bData', JSON.stringify(bData));
+    //             // location.reload();
+    //         }
+    //     }
+    // }
 
     // function removeRow(o){
     //     var p=o.parentNode.parentNode;
     //         p.parentNode.removeChild(p);
     // }
+
     window.getLSM = getLSM;
+    window.getLSMList = getLSMList;
     
 });
 

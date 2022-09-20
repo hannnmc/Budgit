@@ -59,6 +59,11 @@ document.addEventListener("DOMContentLoaded", e => {
       document.getElementById('mi-chart'),
       config
   );
+
+  function setMonthlyIncome(data) {
+    let old =  JSON.parse(localStorage.getItem('bData'));
+    localStorage.setItem('bData', JSON.stringify([...old, data]));
+}
   
 });
 

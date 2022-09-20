@@ -1,3 +1,6 @@
+/*!****************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/reset.css ***!
+  \****************************************************************************************************/
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -46,6 +49,9 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+/*!****************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/style.css ***!
+  \****************************************************************************************************/
 body {
   font-family: sans-serif;
 }
@@ -98,7 +104,7 @@ body {
 #welcome {
   display:flex;
   padding: 0% 0 1% 90px;
-  font-size: 45px;
+  font-size: 40px;
   color: darkslategrey;
 }
 #welcome p {
@@ -111,7 +117,7 @@ body {
   margin-left: 90px;
   width: 100%;
   height: 100%;
-  padding: 3% 0 0 5%;
+  padding: 2% 0 0 4.5%;
 }
 
 .chart-headers {
@@ -130,7 +136,7 @@ body {
 
 .daily-spending {
   width: 500px;
-  height: 400px;
+  height: 385px;
 }
 
 #add-expense {
@@ -140,7 +146,6 @@ body {
 }
 
 input {
-  /* color:#81818198; */
   color: darkslategray;
   width: 20%;
   height: 60%;
@@ -173,15 +178,17 @@ tr:nth-child(even) {
 }
 td {
   padding: 7px;
+  vertical-align: middle;
 }
 
 table .amount-col {
   text-align: right;
 }
-
 table .item-col {
   width: 30%;
 }
+
+
 
 #error {
   color: red;
@@ -227,7 +234,7 @@ button {
 }
 
 #spending-category {
-  padding: 3% 0 0 0 ;
+  padding: 0 0 0 0 ;
   width: 500px;
   height: 400px;
 }
@@ -236,6 +243,7 @@ button {
 
 
 
+/*!*************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
+  \*************************************************************************************************************************************/
 
-
-/*# sourceMappingURL=main.css.map*/
