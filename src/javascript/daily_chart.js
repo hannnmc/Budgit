@@ -183,8 +183,8 @@ document.addEventListener("DOMContentLoaded", e => {
     }
     
     // get monthly total spending
-    function getLSM(time = new Date(),income = false) {
-        let list = getLSMList(time);
+    function getLSM(time = new Date(), income = false) {
+        let list = getLSMList(time,income);
         let sum = parseFloat(0);
             list.forEach( obj => {
                 sum += parseFloat(obj.amount);
@@ -268,7 +268,8 @@ document.addEventListener("DOMContentLoaded", e => {
     function updateGraphs(){
         updateValue();
         updateCategory();
-        updateMontlyS();
+        updateMonthlyS();
+        updateMonthlyI();
     }   
 
 

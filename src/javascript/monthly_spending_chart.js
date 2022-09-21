@@ -8,24 +8,24 @@ function getFirstDayPrevMonth(day) {
 }
 
 document.addEventListener("DOMContentLoaded", e => {
-  const days = [];
-  let day = new Date();
-  while (days.length < 3) {
-      days.unshift(day);
-      day = getFirstDayPrevMonth(day);
+  const months = [];
+  let month = new Date();
+  while (months.length < 3) {
+      months.unshift(month);
+      month = getFirstDayPrevMonth(month);
   }
 
   const labels = [
-      `${monthNames[days[0].getMonth()]}`,
-      `${monthNames[days[1].getMonth()]}`,
-      `${monthNames[days[2].getMonth()]}`
+      `${monthNames[months[0].getMonth()]}`,
+      `${monthNames[months[1].getMonth()]}`,
+      `${monthNames[months[2].getMonth()]}`
     ];
 
   const data = {
   labels: labels,
   datasets: [{
       label: 'Monthly Expense',
-      data: [getLSM(days[0]), getLSM(days[1]), getLSM()],
+      data: [getLSM(months[0]), getLSM(months[1]), getLSM()],
       backgroundColor: [
         'rgba(255, 205, 86, 0.8)'
       ],
@@ -60,28 +60,15 @@ document.addEventListener("DOMContentLoaded", e => {
   );
   document.getElementById('add-expense').addEventListener("submit", updateValue)
 
-  let current = labels[labels.length - 1]
-
-  // function updateValue(val = getLSM(),label = current) {
-  //   const index = labels.indexOf(label);
-  //   myChart.config.data.datasets[0].data[index] = val;
-  //   myChart.update();
-  // }
-
   function updateValue() {
-    days.forEach(day => {
-        let index = days.indexOf(day);
-        myChart.config.data.datasets[0].data[index] = getLSM(day);
+    months.forEach(month => {
+        let index = months.indexOf(month);
+        myChart.config.data.datasets[0].data[index] = getLSM(month);
     })
     myChart.update();
-}
+  }
 
-  // function updateChart() {
-  //   updateValue(getLSM());
-  //   myChart.update();
-  // }
-
-  window.updateMontlyS = updateValue;
+  window.updateMonthlyS = updateValue;
 });
 
  

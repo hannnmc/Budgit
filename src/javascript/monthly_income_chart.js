@@ -9,24 +9,28 @@ function getFirstDayPrevMonth(day) {
 
 document.addEventListener("DOMContentLoaded", e => {
 
-  const days = [];
-  let day = new Date();
-  while (days.length < 3) {
-      days.unshift(day);
-      day = getFirstDayPrevMonth(day);
+  const months = [];
+  let month = new Date();
+  while (months.length < 3) {
+      months.unshift(month);
+      month = getFirstDayPrevMonth(month);
   }
 
   const labels = [
-      `${monthNames[days[0].getMonth()]}`,
-      `${monthNames[days[1].getMonth()]}`,
-      `${monthNames[days[2].getMonth()]}`
+      `${monthNames[months[0].getMonth()]}`,
+      `${monthNames[months[1].getMonth()]}`,
+      `${monthNames[months[2].getMonth()]}`
     ];
 
   const data = {
   labels: labels,
   datasets: [{
       label: 'Monthly Income',
-      data: [4570, 4570, 4875],
+      data: [
+        getLSM(months[0],true),
+        getLSM(months[1],true),
+        getLSM(month[2],true)
+      ],
       backgroundColor: [
         'rgba(75, 192, 192, 0.8)'
       ],
@@ -60,12 +64,24 @@ document.addEventListener("DOMContentLoaded", e => {
       config
   );
 
-  function setMonthlyIncome(data) {
-    let old =  JSON.parse(localStorage.getItem('bData'));
-    localStorage.setItem('bData', JSON.stringify([...old, data]));
+
+  document.getElementById('add-income').addEventListener('click', setMonthlyIncome)
+  document.getElementById('add-expense').addEventListener("submit", updateValue)
+
+  function updateValue() {
+    months.forEach(month => {
+        let index = months.indexOf(month);
+        myChart.config.data.datasets[0].data[index] = getLSM(month,true);
+    })
+    myChart.update();
   }
-  
-  // window.monthlyIncome = myChart;
+
+  // function setMonthlyIncome(data) {
+  //   let old =  JSON.parse(localStorage.getItem('bData'));
+  //   localStorage.setItem('bData', JSON.stringify([...old, data]));
+  // }
+
+  window.updateMonthlyI = updateValue;
 });
 
  
