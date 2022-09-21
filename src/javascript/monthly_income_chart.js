@@ -9,6 +9,8 @@ function getFirstDayPrevMonth(day) {
 
 document.addEventListener("DOMContentLoaded", e => {
 
+  let TMonthlyIncome = JSON.parse(localStorage.getItem('MonthlyIncome'))
+
   const months = [];
   let month = new Date();
   while (months.length < 3) {
@@ -27,9 +29,9 @@ document.addEventListener("DOMContentLoaded", e => {
   datasets: [{
       label: 'Monthly Income',
       data: [
-        getLSM(months[0],true),
-        getLSM(months[1],true),
-        getLSM(month[2],true)
+        getLSM(months[0],true) + TMonthlyIncome,
+        getLSM(months[1],true) + TMonthlyIncome,
+        getLSM(month[2],true) + TMonthlyIncome
       ],
       backgroundColor: [
         'rgba(75, 192, 192, 0.8)'
@@ -66,20 +68,24 @@ document.addEventListener("DOMContentLoaded", e => {
 
 
   document.getElementById('add-income').addEventListener('click', toggleBar)
+  document.getElementById('set-income').addEventListener('click', setMonthlyIncome)
   document.getElementById('add-expense').addEventListener("submit", updateValue)
 
   function updateValue() {
     months.forEach(month => {
         let index = months.indexOf(month);
-        myChart.config.data.datasets[0].data[index] = getLSM(month,true);
+        let totalMonthly = getLSM(months[index],true) + TMonthlyIncome;
+        myChart.config.data.datasets[0].data[index] = totalMonthly;
     })
     myChart.update();
   }
 
-  // function setMonthlyIncome(data) {
-  //   let old =  JSON.parse(localStorage.getItem('bData'));
-  //   localStorage.setItem('bData', JSON.stringify([...old, data]));
-  // }
+  function setMonthlyIncome() {
+    let monthlyIncome = parseFloat(document.getElementById('income-input').value)
+    localStorage.setItem('MonthlyIncome' , JSON.stringify(monthlyIncome))
+    TMonthlyIncome = monthlyIncome;
+    updateValue();
+  }
 
   function toggleBar() {
     let iBar = document.getElementById("income-bar");
@@ -91,7 +97,6 @@ document.addEventListener("DOMContentLoaded", e => {
     }
   }
   
-
   window.updateMonthlyI = updateValue;
 });
 
