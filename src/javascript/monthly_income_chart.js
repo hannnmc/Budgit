@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", e => {
   );
 
 
-  document.getElementById('add-income').addEventListener('click', setMonthlyIncome)
+  document.getElementById('add-income').addEventListener('click', toggleBar)
   document.getElementById('add-expense').addEventListener("submit", updateValue)
 
   function updateValue() {
@@ -80,6 +80,17 @@ document.addEventListener("DOMContentLoaded", e => {
   //   let old =  JSON.parse(localStorage.getItem('bData'));
   //   localStorage.setItem('bData', JSON.stringify([...old, data]));
   // }
+
+  function toggleBar() {
+    let iBar = document.getElementById("income-bar");
+    
+    if (iBar.style.display === "none") {
+      iBar.style.display = "block";
+    } else {
+      iBar.style.display = "none";
+    }
+  }
+  
 
   window.updateMonthlyI = updateValue;
 });
