@@ -400,6 +400,31 @@ input::-webkit-inner-spin-button {
   height: 100%;
   padding: 2% 0 0 4.5%;
 }
+.detail-day {
+  display: none;
+  justify-content: left;
+  margin-left: 90px;
+  width: 100%;
+  height: 100%;
+  padding: 2% 0 0 4.5%;
+}
+.savings-page {
+  display: none;
+  justify-content: left;
+  margin-left: 90px;
+  width: 100%;
+  height: 100%;
+  padding: 2% 0 0 4.5%;
+}
+.recommendations {
+  display: none;
+  justify-content: left;
+  margin-left: 90px;
+  width: 100%;
+  height: 100%;
+  padding: 2% 0 0 4.5%;
+}
+
 /*!*************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
   \*************************************************************************************************************************************/

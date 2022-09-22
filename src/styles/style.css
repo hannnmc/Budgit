@@ -346,3 +346,27 @@ input::-webkit-inner-spin-button {
   height: 100%;
   padding: 2% 0 0 4.5%;
 }
+.detail-day {
+  display: none;
+  justify-content: left;
+  margin-left: 90px;
+  width: 100%;
+  height: 100%;
+  padding: 2% 0 0 4.5%;
+}
+.savings-page {
+  display: none;
+  justify-content: left;
+  margin-left: 90px;
+  width: 100%;
+  height: 100%;
+  padding: 2% 0 0 4.5%;
+}
+.recommendations {
+  display: none;
+  justify-content: left;
+  margin-left: 90px;
+  width: 100%;
+  height: 100%;
+  padding: 2% 0 0 4.5%;
+}
