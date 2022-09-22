@@ -106,26 +106,27 @@ document.addEventListener("DOMContentLoaded", e => {
         let category             = row.insertCell(1);
         let amount               = row.insertCell(2);
         let delRow               = row.insertCell(3);
-            row.dataset.item     = i;
-            item.innerHTML       = i;
+            row.dataset.item     = i;   //creating datasets with value
+            item.innerHTML       = i;   //assigning cells in table with user input
             row.dataset.category = c;
             category.innerHTML   = c;
             row.dataset.amount   = a;
-            amount.innerHTML     = parseFloat(a).toFixed(2);
-            delRow.innerHTML     = "<i class='material-symbols-outlined'>delete</i>";
-
+            amount.innerHTML     = parseFloat(a).toFixed(2);  
+            delRow.innerHTML     = "<i class='material-symbols-outlined'>delete</i>";//google icons
+        // add class to columns for style
         amount.classList.add("amount-col");
         delRow.classList.add('del-row')
+        // add event listeners to trigger removal function
         delRow.addEventListener('click', () => {
-            removeEntry(
-                row.dataset.item,
+            removeEntry(        //remove entries through datasets
+                row.dataset.item, 
                 row.dataset.category,
                 row.dataset.amount
             );
-            removeRow(delRow);
-            updateGraphs();
+            removeRow(delRow);  //remove entry from table
+            updateGraphs();     //update all graphs
         })
-        table.appendChild(row);
+        table.appendChild(row); //add entry to table
     }
 
     
