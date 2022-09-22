@@ -1,6 +1,6 @@
 # Budgit
 <div align="center">
-  <img width="550" height="406" src="https://github.com/hannnmc/Budgit/blob/main/assets/images/Budgit_production_main.png">
+  <img width="650" height="464.45" src="https://github.com/hannnmc/Budgit/blob/main/assets/images/Budgit_production_main.png">
 </div>
 
 ## Background
