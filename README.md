@@ -17,7 +17,7 @@ Not sure when you'll finally be able to afford that trip to Hawaii or that new r
   <img width="800" height="575" src="https://github.com/hannnmc/Budgit/blob/main/assets/images/add_expense.gif">
 3. Track and visualize monthly and one-time income
 <img width="800" height="575" src="https://github.com/hannnmc/Budgit/blob/main/assets/images/add_income.gif">
-4. Remove any entries in real-time
+4. Remove entries in real-time
 <img width="800" height="772" src="https://github.com/hannnmc/Budgit/blob/main/assets/images/remove_entries.gif">
 
 ## Code Snippets
@@ -31,7 +31,7 @@ Not sure when you'll finally be able to afford that trip to Hawaii or that new r
 
 ## Future Features Coming Soon!
 
-- Add an expense/income for any date
+- Add xpense/income for any date
 - Historical spending details
 - Detailed daily view for the month
 - Calculate and create savings plan
