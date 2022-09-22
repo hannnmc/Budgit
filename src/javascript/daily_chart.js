@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", e => {
             70,
             300,
             177,
-            215
+            75
             // getLSD(days[5]),
             // getLSD(days[6])
         ],
