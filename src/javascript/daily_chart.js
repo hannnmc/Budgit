@@ -117,6 +117,7 @@ document.addEventListener("DOMContentLoaded", e => {
         row.dataset.amount = parseFloat(a).toFixed(2);
         amount.classList.add("amount-col");
         delRow.innerHTML= "<i class='material-symbols-outlined'>delete</i>";
+        delRow.classList.add('del-row')
         delRow.addEventListener('click', () => {
             removeEntry(
                 row.dataset.item,

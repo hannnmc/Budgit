@@ -1,14 +1,12 @@
 body {
   font-family: sans-serif;
-  background-image: url("https://img.freepik.com/free-photo/textured-background-white-tone_53876-128610.jpg?w=1380&t=st=1663781334~exp=1663781934~hmac=e3266ace6f81df97a533d2e26ad8661bfcb2584107964a949eafa43d3623884d");
-  /* background-image: url("https://img.freepik.com/premium-photo/grey-watercolor-soft-abstract-background_3590-96.jpg?w=1380"); */
-  
+  background: url("https://img.freepik.com/free-photo/blue-abstract-gradient-wave-wallpaper_53876-108364.jpg?w=2000&t=st=1663804468~exp=1663805068~hmac=81c49a6438d9ec3ed763a164fc24c63ad88c0d6d14fc2185d8ef6eb59fe2aa69") no-repeat center center fixed;
 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  height: 1056px;
- overflow-x: hidden;
+
 }
 
 .sidenav {
@@ -17,7 +15,7 @@ body {
   justify-content: space-between;
   align-items: center;
   height: 100%;
-  width: 3.7%;
+  width: 3.8%;
   position:fixed;
   top: 0;
   left: 0;
@@ -31,13 +29,13 @@ body {
   color: #c0bcbce2;
 }
 
-.sidenav a{
+.sidenav-links a{
   flex-direction: column;
   padding: 0px 0px 12.5px 0px;
   text-decoration: none;
   font-size: 45px;
   /* color: #818181; */
-  color:darkslategray;
+  color:#536a6b;
   display: block;
 }
 
@@ -45,7 +43,19 @@ body {
   display:flex;
   flex-direction: column;
   align-items: center;
-  flex-grow: .13;
+  flex-grow: .2;
+}
+
+.social-media {
+  display: flex;
+  height: 40%;
+  flex-direction: column;
+  justify-content: space-around;
+  font-size: 19px;
+}
+
+.social-media i {
+  color: #536a6b;
 }
 
 #income-bar {
@@ -62,7 +72,7 @@ body {
   border-radius: 7px;
   transition: 1s;
   transform: translateX(10px);
-  border: 1.5px solid darkslategray;
+  border: 1.5px solid #536a6b;
 }
 
 #income-input {
@@ -75,7 +85,7 @@ body {
 }
 #income-label {
   display: inline-block;
-  color: darkslategray;
+  color: #536a6b;
   font-size: 12px;
   text-align:left;
   font-weight: 900;
@@ -106,12 +116,13 @@ body {
 
 #welcome {
   display:flex;
-  padding: 0% 0 1% 90px;
-  font-size: 40px;
-  color: darkslategrey;
+  padding: 1% 0 0 90px;
+  font-size: 38px;
+  color: #536a6b;
+  /* font-weight: 500; */
 }
 #welcome p {
-  padding: 2% 0 0 5%;
+  padding: 2% 0 0 4.8%;
 }
 
 .main {
@@ -124,10 +135,10 @@ body {
 }
 
 .chart-headers {
-  padding: 0 0 6% 0;
+  padding: 0 0 3% 0;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-size: 30px;
-  color: darkslategrey
+  color: #536a6b
 }
 
 .left-panel {
@@ -150,23 +161,23 @@ body {
 }
 
 input {
-  color: darkslategray;
+  color: #536a6b;
   width: 20%;
   height: 60%;
   border-radius: 5px;
-  border: 1px solid darkslategray;
+  border: 1px solid #536a6b;
 }
 
 input:focus {
-  color: darkslategray;
+  color: #536a6b;
 }
 
 select {
-  color:darkslategray;
+  color:#536a6b;
   width: 28%;
   height: 75%;
   border-radius: 5px;
-  border: 1px solid darkslategray;
+  border: 1px solid #536a6b;
 }
 
 #amount {
@@ -179,7 +190,7 @@ select {
 }
 
 #daily-table {
-  color:darkslategrey;
+  color:#536a6b;
   font-size: 14px;
 }
 tr:nth-child(even) {
@@ -197,7 +208,9 @@ table .item-col {
   width: 30%;
 }
 
-
+table .del-row:hover{
+  cursor: pointer;
+}
 
 #error {
   color: red;
@@ -207,13 +220,14 @@ table .item-col {
 
 #add-button {
   border-radius: 12px;
-  background-color: #1463f3;;
+  background-color: #1462f3d0;;
   color: white;
   font-weight: 900;
-  width: 17%;
+  width: 14%;
   align-self:flex-end;
-  padding: .3% .3% .5% .3%;
+  padding: .2% .2% .3% .2%;
   margin-left: 5%;
+  cursor: pointer;
 }
 
 .right-panel {
@@ -248,7 +262,7 @@ table .item-col {
   height: 400px;
 }
 
-
+/* modal prompt setup */
 .modal-wrapper {
   display: none;
   justify-content: center;
@@ -269,7 +283,7 @@ table .item-col {
   background-color: white;
   padding: 65px 50px 50px 50px;
   border-radius: 10px;
-  background-color: rgba(42, 41, 41, 0.643);
+  background-color: rgba(42, 41, 41, 0.88);
   color: white;
   z-index: 30;
 }

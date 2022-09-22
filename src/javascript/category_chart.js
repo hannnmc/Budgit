@@ -1,12 +1,12 @@
 import Chart from 'chart.js/auto';
 
 const labels = [
-    'Food',
+    'Food/Beverages',
     'Entertainment',
     'Merchandise',
     'Transportation',
     'Housing',
-    'Bills',
+    'Utilities/Bills',
     'Other'
 ]
 
