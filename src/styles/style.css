@@ -28,6 +28,7 @@ body {
 }
 .sidenav a:hover {
   color: #c0bcbce2;
+  cursor: pointer;
 }
 
 .sidenav-links a{
@@ -93,11 +94,11 @@ body {
 #set-income {
   display: block;
   height: 18px;
-  width: 88.5%;
+  width: 87%;
   font-size: 11px;
   margin: 5px 0 10px 0;
   border-radius: 5px;
-  align-items:  center;
+  align-self:  center;
   background-color: rgb(75, 192, 192);
   color: white;
   font-weight: 900;
@@ -335,4 +336,13 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+
+.detail-category {
+  display: none;
+  justify-content: left;
+  margin-left: 90px;
+  width: 100%;
+  height: 100%;
+  padding: 2% 0 0 4.5%;
 }
