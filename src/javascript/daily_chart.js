@@ -47,13 +47,20 @@ document.addEventListener("DOMContentLoaded", e => {
     datasets: [{
         label: 'Daily Spending',
         data: [
-            getLSD(days[0]),
-            getLSD(days[1]),
-            getLSD(days[2]),
-            getLSD(days[3]),
-            getLSD(days[4]),
-            getLSD(days[5]),
-            getLSD(days[6])
+            // getLSD(days[0]),
+            // getLSD(days[1]),
+            // getLSD(days[2]),
+            // getLSD(days[3]),
+            // getLSD(days[4]),
+            320,
+            200,
+            190,
+            70,
+            300,
+            177,
+            215
+            // getLSD(days[5]),
+            // getLSD(days[6])
         ],
         backgroundColor: [
         'rgba(255, 99, 132, .9)',

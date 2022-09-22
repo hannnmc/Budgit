@@ -26,9 +26,12 @@ document.addEventListener("DOMContentLoaded", e => {
   datasets: [{
       label: 'Monthly Expense',
       data: [
-        getLSM(months[0]),
-        getLSM(months[1]),
-        getLSM()
+        // getLSM(months[0]), 
+        // getLSM(months[1]),
+        3500,
+        3850,
+        // getLSM()
+        2450
         ],
       backgroundColor: [
         'rgba(255, 205, 86, 0.8)'
