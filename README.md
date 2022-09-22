@@ -20,13 +20,9 @@ Not sure when you'll finally be able to afford that trip to Hawaii or that new r
 4. Remove any entries in real-time
 <img width="800" height="772" src="https://github.com/hannnmc/Budgit/blob/main/assets/images/remove_entries.gif">
 
-##### In addition, this application will help you
-1. Target monthly savings
-2. Reach savings goal
-3. Provide recommendations to cut expenses
-
 ## Code Snippets
-
+<img width="500" height="400" src="https://github.com/hannnmc/Budgit/blob/main/assets/images/add_row.png">
+<img width="500" height="157.3" src="https://github.com/hannnmc/Budgit/blob/main/assets/images/retrieve_daily.png">
 ## Technologies
 
 - Chart.js - Visualizing data
