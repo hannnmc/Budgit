@@ -1,38 +1,41 @@
 # Budgit
 <div align="center">
-  <img width="550" height="406" src="https://github.com/hannnmc/Budgit/blob/main/assets/images/layout_draft.png">
+  <img width="550" height="406" src="https://github.com/hannnmc/Budgit/blob/main/assets/images/Budgit_production_main.png">
 </div>
 
 ## Background
 
-Budgit is a mobile/ desktop web application that allows you to simplfy the way you manage your expenses and help you maximize your budget! Not sure when you'll finally be able to afford that trip or that sweet new ride? Budgit will help you realize it sooner than you think!
+Budgit is an expense tracking web application that aims to simplify the way you track your expenses and help you maximize your budget! Breakdown your spending by day, month, and category, all visualized in a single glance. Budgit also features income tracking to help you calculate your savings and help you get to your savings goal.  You can add monthly income as well as one-time incomes such as a Bonus or Tax-refund, visualized as well! 
 
-Budgit allows you to record expenses and income, set a date for entry, categories entries, give you comprehensive monthly overview, and more. Budgit will also allow you to set savings goal and help you achieve it by providing recommendations to cut costs! Get to your desired financial state now with Budgit!
+Not sure when you'll finally be able to afford that trip to Hawaii or that new ride? Budgit will help you get there sooner than you think - Start tracking with Budgit now!
 
 ## Features
 
-##### Budgit allows you to
-1. Track all expenses
-2. Visualize spending categories
-3. Track monthly subscriptions
-4. View monthly spending history
+##### Users are able to
+1. Enter daily expenses/incomes
+2. Visualize daily/monthly/category expenses with a single click
+  <img width="800" height="575" src="https://github.com/hannnmc/Budgit/blob/main/assets/images/add_expense.gif">
+3. Track and visualize monthly and one-time income
+<img width="800" height="575" src="https://github.com/hannnmc/Budgit/blob/main/assets/images/add_income.gif">
+4. Remove any entries in real-time
+<img width="800" height="772" src="https://github.com/hannnmc/Budgit/blob/main/assets/images/remove_entries.gif">
 
 ##### In addition, this application will help you
 1. Target monthly savings
 2. Reach savings goal
 3. Provide recommendations to cut expenses
 
+## Code Snippets
+
 ## Technologies
 
-- D3.js - Visualizing data
 - Chart.js - Visualizing data
-- Local Storage - Storing user data
+- Local Storage - Storing user data on local machine
 
-## Implementation Timeline
+## Future Features Coming Soon!
 
-- Friday Afternoon & Weekend - build index html page and familiarize with API
-- Monday - Finalize HTML, CSS, and UX UI
-- Tuesday - Work on js components utilizing DOM manipulation and AJAX to render events
-- Wednesday - Implement additional functionalities and formulas
-- Thursday Morning - Finish all functionalities and testing
-
+- Add an expense/income for any date
+- Historical spending details
+- Detailed daily view for the month
+- Calculate and create savings plan
+- Provide cost-cutting recommendations
