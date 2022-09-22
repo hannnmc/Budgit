@@ -26,12 +26,9 @@ document.addEventListener("DOMContentLoaded", e => {
   datasets: [{
       label: 'Monthly Expense',
       data: [
-        // getLSM(months[0]), 
-        // getLSM(months[1]),
-        3500,
-        3850,
-        // getLSM()
-        2450
+        getLSM(months[0]), 
+        getLSM(months[1]),
+        getLSM()
         ],
       backgroundColor: [
         'rgba(255, 205, 86, 0.8)'
@@ -70,7 +67,7 @@ document.addEventListener("DOMContentLoaded", e => {
   function updateValue() {
     months.forEach(month => {
         let index = months.indexOf(month);
-        myChart.config.data.datasets[0].data[index] = getLSM(month);
+        myChart.config.data.datasets[0].data[index] = getLSM(month); //total monthly expense
     })
     myChart.update();
   }

@@ -10,7 +10,6 @@ if (!localStorage.getItem('bData')) {
 function getPreviousDay(date = new Date()) {
     const previous = new Date(date.getTime());
     previous.setDate(date.getDate() - 1);
-  
     return previous;
 }
 
@@ -47,20 +46,13 @@ document.addEventListener("DOMContentLoaded", e => {
     datasets: [{
         label: 'Daily Spending',
         data: [
-            // getLSD(days[0]),
-            // getLSD(days[1]),
-            // getLSD(days[2]),
-            // getLSD(days[3]),
-            // getLSD(days[4]),
-            320,
-            200,
-            190,
-            70,
-            300,
-            177,
-            75
-            // getLSD(days[5]),
-            // getLSD(days[6])
+            getLSD(days[0]),
+            getLSD(days[1]),
+            getLSD(days[2]),
+            getLSD(days[3]),
+            getLSD(days[4]),
+            getLSD(days[5]),
+            getLSD(days[6])
         ],
         backgroundColor: [
         'rgba(255, 99, 132, .9)',
@@ -106,24 +98,23 @@ document.addEventListener("DOMContentLoaded", e => {
     // onclick event
     document.getElementById('add-expense').addEventListener("submit", addExpense)
 
-    // insert row to table
+    // insert entries to table with individual removal event listeners
     function insertRow(i,c,a) {
-        let table = document.getElementById('daily-table');
-        let row = document.createElement('tr');
-        let item = row.insertCell(-1);
-        let category = row.insertCell(1);
-        let amount = row.insertCell(2);
-        let delRow = row.insertCell(3);
-        item.innerHTML=i;
-        row.dataset.item = i;
-        item.classList.add("item-col");
-        category.innerHTML=c;
-        row.dataset.category = c;
-        category.classList.add("category-col")
-        amount.innerHTML=parseFloat(a).toFixed(2);
-        row.dataset.amount = parseFloat(a).toFixed(2);
+        let table                = document.getElementById('daily-table');
+        let row                  = document.createElement('tr');
+        let item                 = row.insertCell(-1);
+        let category             = row.insertCell(1);
+        let amount               = row.insertCell(2);
+        let delRow               = row.insertCell(3);
+            row.dataset.item     = i;
+            item.innerHTML       = i;
+            row.dataset.category = c;
+            category.innerHTML   = c;
+            row.dataset.amount   = a;
+            amount.innerHTML     = parseFloat(a).toFixed(2);
+            delRow.innerHTML     = "<i class='material-symbols-outlined'>delete</i>";
+
         amount.classList.add("amount-col");
-        delRow.innerHTML= "<i class='material-symbols-outlined'>delete</i>";
         delRow.classList.add('del-row')
         delRow.addEventListener('click', () => {
             removeEntry(
@@ -142,17 +133,18 @@ document.addEventListener("DOMContentLoaded", e => {
     // adds expense by calling insert row, updateLS, and updateValue
     function addExpense(e) { 
         e.preventDefault();
-        const item = (document.getElementById('item').value);
-        const category = (document.getElementById('category').value);
-        let amount = (document.getElementById('amount').value);
+
+        const item     = (document.getElementById('item').value),
+              category = (document.getElementById('category').value);
+        let   amount   = (document.getElementById('amount').value);
         if (!item || category === 'none' || !amount) {
-            let error = document.getElementById("error");
-            error.style.display = 'block';
-            error.innerHTML = 'Please fill out all fields.';
+                let error  = document.getElementById("error");
+                error.style.display = 'block';
+                error.innerHTML     = 'Please fill out all fields.';
             setTimeout(() => {
                 const error = document.getElementById('error');
                 error.style.display = 'none';
-              }, 3000); 
+            }, 3000); 
         } else {
         insertRow(item,category,amount);
         updateLS(createEntry(item,category,amount));
@@ -171,16 +163,16 @@ document.addEventListener("DOMContentLoaded", e => {
 
     // create new entry to be stored in local storage
     function createEntry (item,category,val,time = new Date()){
-        const entry = {};
-        let m = monthNames[time.getMonth()];
-        let d = time.getDate();
-        let y = time.getFullYear();
-        entry.y = y;
-        entry.m = m;
-        entry.d = d;
-        entry.item = item;
-        entry.category = category;
-        entry.amount = val;
+        const entry          = {};
+        let   m              = monthNames[time.getMonth()],
+              d              = time.getDate(),
+              y              = time.getFullYear();
+              entry.y        = y;
+              entry.m        = m;
+              entry.d        = d;
+              entry.item     = item;
+              entry.category = category;
+              entry.amount   = val;
         return entry;
     }
 
@@ -214,7 +206,7 @@ document.addEventListener("DOMContentLoaded", e => {
         return list;
     }
 
-    // get daily spending
+    // dynamically get daily spending/income/both from local storage
     function getLSD(time = new Date(), income = false, full = false){
         let list = getLSDList(time, income, full);
         let sum = parseFloat(0);
@@ -227,11 +219,11 @@ document.addEventListener("DOMContentLoaded", e => {
 
     // get list of daily transaction
     function getLSDList(time = new Date(),income = false, full = false){
-        const m = monthNames[time.getMonth()];
-        const d = time.getDate();
-        const y = time.getFullYear();
-        const bData = JSON.parse(localStorage.getItem('bData'));
-        let list = [];
+        const m     = monthNames[time.getMonth()],
+              d     = time.getDate(),
+              y     = time.getFullYear(),
+              bData = JSON.parse(localStorage.getItem('bData'));
+        let   list  = [];
         if (bData && !income && !full){
             list = bData.filter(obj => obj.y === y && obj.m === m && obj.d === d && obj.category !== 'Income') 
         } else if (bData && income && !full) {
@@ -272,7 +264,7 @@ document.addEventListener("DOMContentLoaded", e => {
         row.parentNode.removeChild(row);
     }
 
-
+    // update all charts simultaneously
     function updateGraphs(){
         updateValue();
         updateCategory();
