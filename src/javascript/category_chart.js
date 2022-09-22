@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", e => {
                 'rgba(153, 102, 255, 0.8)',
                 'rgba(201, 203, 207, 0.8)'
             ],
-            hoverOffset: 4
+            hoverOffset: 6
         }]
     };
     const config = {
