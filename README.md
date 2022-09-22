@@ -32,7 +32,7 @@ Not sure when you'll finally be able to afford that trip to Hawaii or that new r
 
 ## Future Features Coming Soon!
 
-- Add xpense/income for any date
+- Add expense/income for any date
 - Historical spending details
 - Detailed daily view for the month
 - Calculate and create savings plan
