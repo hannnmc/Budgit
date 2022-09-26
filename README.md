@@ -20,18 +20,19 @@ Not sure when you'll finally be able to afford that trip to Hawaii or that new r
 4. Remove entries in real-time
 <img width="800" height="772" src="https://github.com/hannnmc/Budgit/blob/main/assets/images/remove_entries.gif">
 
-## Code Snippets
+## Technical Implementation
 <img width="500" height="400" src="https://github.com/hannnmc/Budgit/blob/main/assets/images/add_row.png">
 <img width="500" height="157.3" src="https://github.com/hannnmc/Budgit/blob/main/assets/images/retrieve_daily.png">
 
 ## Technologies
 
+- Vanilla Javascript/ HTML/ CSS
 - Chart.js - Visualizing data
 - Local Storage - Storing user data on local machine
 
 ## Future Features Coming Soon!
 
-- Add xpense/income for any date
+- Add expense/income for any date
 - Historical spending details
 - Detailed daily view for the month
 - Calculate and create savings plan
