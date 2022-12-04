@@ -5,7 +5,7 @@
 
 ## Background
 
-<a href="https://hannnmc.github.io/Budgit/#">Budgit</a> is an expense tracking web application that aims to simplify the way you track your expenses and help you maximize your budget! Breakdown your spending by day, month, and category, all visualized in a single glance. Budgit also features income tracking to help you calculate your savings and help you get to your savings goal.  You can add monthly income as well as one-time incomes such as a Bonus or Tax-refund, visualized as well! 
+<a href="https://hannnmc.github.io/Budgit/#">Budgit</a> is an expense tracking web application that aims to simplify the way you manage your expense and help you maximize your budget! Breakdown your spending by day, month, and category, all visualized with a single click. Budgit also features income tracking to help you calculate your savings and help you get to your savings goal! You can add monthly income as well as one-time incomes such as Bonus or Tax-refund, visualized as well!
 
 Not sure when you'll finally be able to afford that trip to Hawaii or that new ride? Budgit will help you get there sooner than you think - Start tracking with Budgit now!
 
