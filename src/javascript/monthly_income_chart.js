@@ -85,13 +85,14 @@ document.addEventListener("DOMContentLoaded", e => {
     localStorage.setItem('MonthlyIncome' , JSON.stringify(monthlyIncome))
     TMonthlyIncome = monthlyIncome;
     updateValue();
+    toggleBar();
   }
 
   function toggleBar() {
     let iBar = document.getElementById("income-bar");
     
     if (iBar.style.display === "none") {
-      iBar.style.display = "block";
+      iBar.style.display = "flex";
     } else {
       iBar.style.display = "none";
     }

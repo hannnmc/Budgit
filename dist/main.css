@@ -114,48 +114,64 @@ body {
 }
 
 #income-bar {
-  display: block;
+  display: flex;
+  flex-direction: column;
   position:fixed;
   top: 0;
-  left: 0;
-  width: 7.4%;
+  left: 5px;
+  width: 156.6px;
   z-index: 2;
   background-color: whitesmoke;
   margin: 1.0% 0 0 3.5%;
-  padding: 1% 0 0 1.25%;
+  /* padding: 1% 0 0 1.25%; */
+  padding: 16px;
   overflow-x: hidden;
   border-radius: 7px;
   transition: 1s;
   transform: translateX(10px);
-  border: 1.5px solid darkslategray;
+  /* border: 1.5px solid darkslategray; */
+  box-shadow: 0 2px 16px rgba(0 0 0 / 22%);
+}
+
+.income-bar-top {
+  display: flex;
+  /* flex-direction: column; */
 }
 
 #income-input {
   display: inline-block;
-  width:65%;
+  width:80%;
   text-align: end;
   margin-top: 6%;
   font-size: 12px;
-  font-weight: 900;
+  font-weight: 700;
 }
 #income-label {
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
   color: darkslategray;
-  font-size: 12px;
+  font-size: 14px;
   text-align:left;
-  font-weight: 900;
+  font-weight: 700;
 }
 #set-income {
   display: block;
   height: 18px;
-  width: 87%;
-  font-size: 11px;
-  margin: 5px 0 10px 0;
+  width: 100%;
+  font-size: 12px;
+  margin-top: 12px;
+  /* margin: 5px 0 10px 0; */
+  /* padding: 3px; */
+  padding-bottom: 20px;
+  line-height: 24px;
+  border: none;
   border-radius: 5px;
   align-self:  center;
   background-color: rgb(75, 192, 192);
   color: white;
-  font-weight: 900;
+  font-weight: 600;
+  box-shadow: 2px 2px rgba(0, 0, 0, .3);
+  cursor: pointer;
 }
 
 .avatar {
