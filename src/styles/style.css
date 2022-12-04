@@ -411,3 +411,13 @@ input::-webkit-inner-spin-button {
   height: 100%;
   padding: 2% 0 0 4.5%;
 }
+
+@media (max-width: 1200px) {
+  .main {
+    display: flex;
+    flex-direction: column;
+  }
+  .right-panel {
+    margin-left: 0;
+  }
+}
