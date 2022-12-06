@@ -413,14 +413,28 @@ table .del-row:hover{
 
 }
 
+.modal-content>p>span {
+  font-weight: 700;
+}
+
 .close-button {
   position: absolute;
-  border-radius: 15px;
+  /* padding: 4px; */
+  border-radius: 50%;
   margin: 10px 10px 0 0;
   color: white;
-  background-color: rgba(42, 41, 41, 0.3);
+  background-color: transparent;
   top: 0; 
   right: 0;
+  aspect-ratio: 1;
+  border: none;
+  padding: 6px 12px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.close-button:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, .8);
 }
 
 .active {
@@ -473,6 +487,17 @@ input::-webkit-inner-spin-button {
   }
   .right-panel {
     margin-left: 0;
+  }
+}
+
+@media (max-width: 350px) {
+  .main {
+    margin-left: 50px;
+  }
+  #welcome {
+    margin-left: 30px;
+    width: 100%;
+    font-size: 35px;
   }
 }
 /*!*************************************************************************************************************************************!*\
