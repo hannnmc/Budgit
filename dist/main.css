@@ -123,19 +123,16 @@ body {
   z-index: 2;
   background-color: whitesmoke;
   margin: 1.0% 0 0 3.5%;
-  /* padding: 1% 0 0 1.25%; */
   padding: 16px;
   overflow-x: hidden;
   border-radius: 7px;
   transition: 1s;
   transform: translateX(10px);
-  /* border: 1.5px solid darkslategray; */
   box-shadow: 0 2px 16px rgba(0 0 0 / 22%);
 }
 
 .income-bar-top {
   display: flex;
-  /* flex-direction: column; */
 }
 
 #income-input {
@@ -218,7 +215,6 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  /* min-width: 500px; */
   width: 30%;
 }
 
@@ -329,7 +325,6 @@ table .del-row:hover{
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  /* padding: 0 0 0 10%; */
   margin-left: 10%;
 }
 
@@ -419,7 +414,6 @@ table .del-row:hover{
 
 .close-button {
   position: absolute;
-  /* padding: 4px; */
   border-radius: 50%;
   margin: 10px 10px 0 0;
   color: white;
