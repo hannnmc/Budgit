@@ -11,7 +11,6 @@ Not sure when you'll finally be able to afford that trip to Hawaii or that new r
 
 ## Features
 
-##### Users are able to
 1. Enter daily expenses/incomes
 2. Visualize daily/monthly/category expenses with a single click
   <img width="800" height="575" src="https://github.com/hannnmc/Budgit/blob/main/assets/images/add_expense.gif">
