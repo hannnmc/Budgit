@@ -25,9 +25,12 @@ Not sure when you'll finally be able to afford that trip to Hawaii or that new r
 
 ## Technologies
 
-- Vanilla Javascript/ HTML/ CSS
+- Vanilla Javascript
 - Chart.js - Visualizing data
 - Local Storage - Storing user data on local machine
+- HTML5
+- CSS
+
 
 ## Future Features Coming Soon!
 
