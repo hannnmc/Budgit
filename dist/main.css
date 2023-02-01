@@ -57,6 +57,8 @@ body {
   background-size: cover;
   color: darkslategray;
   overflow-x: hidden;
+  position: relative;
+  z-index: 1000;
 }
 
 .sidenav {
