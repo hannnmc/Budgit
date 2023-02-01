@@ -25,12 +25,6 @@ document.addEventListener("DOMContentLoaded", e => {
         modal.classList.remove('active');
     });
 
-    
 
-
-    
-    // detailCat.addEventListener ('click', () => {
-    //     detailCatPage.style.display = 'active';
-    // })
 });
 
