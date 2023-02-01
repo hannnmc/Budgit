@@ -81,7 +81,7 @@ body {
 
 .income-bar-top {
   display: flex;
-  /* flex-direction: column; */
+  /* flex-direction: column; */ 
 }
 
 #income-input {
