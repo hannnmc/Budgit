@@ -197,7 +197,7 @@ body {
 
 
 #profile-photo {
-  width: 75%;
+  width: 60px;
   border-radius: 50%;
   cursor: pointer;
 }
@@ -305,6 +305,7 @@ input:focus {
   color:darkslategray;
   font-size: 14px;
 }
+
 tr:nth-child(even) {
   background-color: #ccd0d839;
 }
@@ -396,7 +397,7 @@ table .del-row:hover{
 .modal-inner {
   position: relative;
   width: 500px;
-  height: 400px;
+  /* height: 400px; */
   background-color: white;
   padding: 65px 50px 50px 50px;
   border-radius: 10px;
@@ -511,19 +512,67 @@ input::-webkit-inner-spin-button {
 
 @media (max-width: 450px) {
   .main {
-    margin-left: 32px;
+    margin-left: 12px;
   }
   #welcome {
+    padding-top: 32px;
     margin-left: 32px;
     padding-left: 0;
     /* width: 100%; */
     font-size: 35px;
   }
   #container {
+    display: flex;
     flex-direction: column;
+    overflow-x: hidden;
   }
-  .navbar {
-    flex-direction: ;
+  .page-container {
+    margin-left: 0;
+  }
+  .sidenav {
+    flex-direction: row;
+    position: relative;
+    height: 80px;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+  }
+  .sidenav-bot {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+  .sidenav-links {
+    display: flex;
+    margin-left: 32px;
+  }
+  .sidenav-links a {
+    margin-right: 32px;
+  }
+  #profile-photo {
+    width: 40px;
+  }
+
+  .social-media {
+    display: none;
+  }
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  .chart-headers {
+    padding-bottom: 24px;
+  }
+  .daily-spending {
+    width: 95vw;
+    height: 70vw;
+  }
+  #add-expense {
+    width: 90vw;
+  }
+  #add-button {
+    margin: 0
   }
 }
 
