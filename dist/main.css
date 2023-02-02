@@ -1,3 +1,6 @@
+/*!****************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/reset.css ***!
+  \****************************************************************************************************/
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -46,6 +49,9 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+/*!****************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/style.css ***!
+  \****************************************************************************************************/
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   background: url("https://budgit-prod.s3.amazonaws.com/budgit-background.jpg") no-repeat center center fixed;
@@ -304,6 +310,10 @@ input:focus {
 #daily-table {
   color:darkslategray;
   font-size: 14px;
+}
+
+.table-headers {
+  font-weight: 700;
 }
 
 tr:nth-child(even) {
@@ -565,18 +575,38 @@ input::-webkit-inner-spin-button {
     padding-bottom: 24px;
   }
   .daily-spending {
-    width: 95vw;
+    width: 94vw;
     height: 70vw;
   }
   #add-expense {
-    width: 90vw;
+    width: 94vw;
   }
   #add-button {
     margin: 0
   }
+  #daily-table {
+    margin-bottom: 48px;
+    width: 94vw;
+  }
+  .monthly-charts {
+    flex-direction: column;
+    width: 85vw;
+  }
+  .ms-chart {
+    width: 100%;
+    padding: 0;
+  }
+  .mi-chart {
+    width: 100%;
+    padding: 0;
+  }
+  #spending-category {
+    width: 94vw;
+  }
 }
 
 
+/*!*************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
+  \*************************************************************************************************************************************/
 
-
-/*# sourceMappingURL=main.css.map*/

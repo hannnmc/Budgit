@@ -258,6 +258,10 @@ input:focus {
   font-size: 14px;
 }
 
+.table-headers {
+  font-weight: 700;
+}
+
 tr:nth-child(even) {
   background-color: #ccd0d839;
 }
@@ -517,14 +521,33 @@ input::-webkit-inner-spin-button {
     padding-bottom: 24px;
   }
   .daily-spending {
-    width: 95vw;
+    width: 94vw;
     height: 70vw;
   }
   #add-expense {
-    width: 90vw;
+    width: 94vw;
   }
   #add-button {
     margin: 0
+  }
+  #daily-table {
+    margin-bottom: 48px;
+    width: 94vw;
+  }
+  .monthly-charts {
+    flex-direction: column;
+    width: 85vw;
+  }
+  .ms-chart {
+    width: 100%;
+    padding: 0;
+  }
+  .mi-chart {
+    width: 100%;
+    padding: 0;
+  }
+  #spending-category {
+    width: 94vw;
   }
 }
 
