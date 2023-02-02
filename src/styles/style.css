@@ -10,6 +10,16 @@ body {
   overflow-x: hidden;
 }
 
+/* #container{
+  display: flex;
+} */
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 80px;
+}
+
 .sidenav {
   display:flex;
   flex-direction: column;
@@ -141,7 +151,7 @@ body {
 
 #welcome {
   display:flex;
-  padding: 1% 0 1% 10%;
+  padding: 24px 0 48px 60px;
   font-size: 60px;
   color: darkslategray;
   font-weight: 600;
@@ -153,10 +163,9 @@ body {
 .main {
   display: flex;
   justify-content: left;
-  margin-left: 10%;
-  width: 100%;
+  margin-left: 60px;
+  width: calc(100vw - 60px);
   height: 100%;
-  padding: 2% 0 0 4.5%;
   min-width: 1348px;
   max-width: 1830px;
 }
@@ -173,7 +182,16 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   /* min-width: 500px; */
-  width: 30%;
+  width: auto;
+}
+
+.right-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  /* padding: 0 0 0 10%; */
+  margin-left: calc(20% - 175px);
+  width: auto;
 }
 
 .daily-spending {
@@ -279,13 +297,7 @@ table .del-row:hover{
   box-shadow: 2px 2px rgba(0, 0, 0, .3);
 }
 
-.right-panel {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  /* padding: 0 0 0 10%; */
-  margin-left: 10%;
-}
+/* right side starts here */
 
 .monthly-charts {
   display:flex;
