@@ -460,8 +460,7 @@ input::-webkit-inner-spin-button {
 
 @media (max-width: 1200px) {
   body {
-    overscroll-behavior: contain;
-    -webkit-overflow-scrolling: touch;
+    /* -webkit-overflow-scrolling: touch; */
   }
   .main {
     display: flex;
@@ -486,7 +485,7 @@ input::-webkit-inner-spin-button {
   #container {
     display: flex;
     flex-direction: column;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
   }
   .page-container {
     margin-left: 0;
