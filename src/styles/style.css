@@ -459,9 +459,6 @@ input::-webkit-inner-spin-button {
 
 
 @media (max-width: 1200px) {
-  body {
-    /* -webkit-overflow-scrolling: touch; */
-  }
   .main {
     display: flex;
     flex-direction: column;
@@ -472,8 +469,14 @@ input::-webkit-inner-spin-button {
 }
 
 @media (max-width: 700px) {
+  body {
+    width: 100vw;
+    overflow-x: hidden;
+  }
   .main {
     margin-left: 12px;
+    width: 100vw;
+    min-width: auto;
   }
   #welcome {
     padding-top: 32px;
@@ -534,6 +537,9 @@ input::-webkit-inner-spin-button {
   }
   #add-button {
     margin: 0
+  }
+  #daily-transactions {
+    width: 100vw;
   }
   #daily-table {
     margin-bottom: 48px;
