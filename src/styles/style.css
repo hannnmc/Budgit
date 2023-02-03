@@ -461,6 +461,7 @@ input::-webkit-inner-spin-button {
 @media (max-width: 1200px) {
   body {
     overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
   }
   .main {
     display: flex;
