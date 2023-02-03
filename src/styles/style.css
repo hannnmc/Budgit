@@ -469,10 +469,6 @@ input::-webkit-inner-spin-button {
 }
 
 @media (max-width: 700px) {
-  body {
-    width: 100vw;
-    overflow-x: hidden;
-  }
   .main {
     margin-left: 12px;
     width: 100vw;
@@ -488,7 +484,7 @@ input::-webkit-inner-spin-button {
   #container {
     display: flex;
     flex-direction: column;
-    /* overflow-x: hidden; */
+    overflow: hidden;
   }
   .page-container {
     margin-left: 0;
@@ -497,7 +493,7 @@ input::-webkit-inner-spin-button {
     flex-direction: row;
     position: relative;
     height: 80px;
-    width: 100%;
+    width: calc(100vw - 2px);
     justify-content: space-between;
     align-items: center;
     padding: 0;
