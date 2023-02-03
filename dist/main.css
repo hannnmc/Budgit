@@ -606,7 +606,9 @@ input::-webkit-inner-spin-button {
     width: 94vw;
     margin-bottom: 60px;
   }
-  
+  #add-expense>input:first-child {
+    width: 96px;
+  }
 }
 
 
