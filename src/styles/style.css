@@ -456,7 +456,12 @@ input::-webkit-inner-spin-button {
   padding: 2% 0 0 4.5%;
 }
 
+
+
 @media (max-width: 1200px) {
+  body {
+    overscroll-behavior: contain;
+  }
   .main {
     display: flex;
     flex-direction: column;
@@ -466,7 +471,7 @@ input::-webkit-inner-spin-button {
   }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 700px) {
   .main {
     margin-left: 12px;
   }
