@@ -544,6 +544,7 @@ input::-webkit-inner-spin-button {
   .monthly-charts {
     flex-direction: column;
     width: 85vw;
+    padding-bottom: 24px;
   }
   .ms-chart {
     width: 100%;
