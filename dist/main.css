@@ -434,11 +434,14 @@ table .del-row:hover{
 
 .modal-content i {
   display: inline;
-
 }
 
 .modal-content>p>span {
   font-weight: 700;
+}
+
+.demo-income {
+  width: 98%;
 }
 
 .close-button {
@@ -608,6 +611,9 @@ input::-webkit-inner-spin-button {
   }
   #add-expense>input:first-child {
     width: 96px;
+  }
+  .modal-inner {
+    padding: 32px;
   }
 }
 

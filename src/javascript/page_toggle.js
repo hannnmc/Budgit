@@ -13,18 +13,22 @@ document.addEventListener("DOMContentLoaded", e => {
 
     // page containers 
     const modal= document.querySelector('.modal-wrapper');
-    const detailCatPage = document.querySelector('.detail-category');
-    const detailDayPage = document.querySelector('.detail-day');
-    const savingsPage = document.querySelector('.savings-page');
-    const recommendations = document.querySelector('.recommendations');
+    // const detailCatPage = document.querySelector('.detail-category');
+    // const detailDayPage = document.querySelector('.detail-day');
+    // const savingsPage = document.querySelector('.savings-page');
+    // const recommendations = document.querySelector('.recommendations');
 
+    if (!localStorage.getItem('bData')) {
+        const modal= document.querySelector('.modal-wrapper');
+        modal.classList.add('active');
+        localStorage.setItem('bData', '[]')
+    }
     openmodal.addEventListener ('click', () => {
         modal.classList.add('active');
     });
     closemodal.addEventListener ('click', () => {
         modal.classList.remove('active');
     });
-
 
 });
 

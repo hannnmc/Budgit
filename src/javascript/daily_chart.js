@@ -3,9 +3,9 @@ import Chart from 'chart.js/auto';
 const budgitData = [];
 const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
-if (!localStorage.getItem('bData')) {
-    localStorage.setItem('bData', '[]')
-}
+// if (!localStorage.getItem('bData')) {
+//     localStorage.setItem('bData', '[]')
+// }
 
 function getPreviousDay(date = new Date()) {
     const previous = new Date(date.getTime());
