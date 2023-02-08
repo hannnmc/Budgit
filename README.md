@@ -5,10 +5,7 @@
 
 ## Background
 
-<a href="https://hannnmc.github.io/Budgit/#">Budgit</a> is a single-paged budget tracking application that helps users visualize their income and expense to better manage their finance.
-
-Not sure when you'll finally be able to afford that trip to Hawaii or that new ride? Budgit will help you get there sooner than you think - Start tracking with Budgit now!
-
+<a href="https://hannnmc.github.io/Budgit/#">Budgit</a> is a single-paged personal expense/income tracking desktop-application that helps users visualize their finances by date, month, and categories, built with Vanilla Javascript, DOM manipulation, Chart.js, and Local Storage. Users can enter daily transactions as an income or an expense, as well as monthly income to help them easily budget their finance. Budgit is a work in progress with more features to come, such as viewing historical data, savings calculator, and cost-cutting recommendations.
 ## Features
 
 1. Enter daily expenses/incomes
